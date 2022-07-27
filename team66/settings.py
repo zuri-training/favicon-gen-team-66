@@ -112,6 +112,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Authentication
+AUTH_USER_MODEL = 'account.NewUser'
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -131,6 +135,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR/'frontend/static/'
     ]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
