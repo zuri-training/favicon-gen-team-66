@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'rest_framework',
     
     # my apps
-    'account',
+    'apps.account',
 
 ]
 

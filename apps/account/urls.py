@@ -1,6 +1,8 @@
-from . import views
 from django.urls import path
+from .views import UserDetailAPIView,RegisterUserAPIView
+
 
 urlpatterns = [
-    path("", views.home_page, name="home")
+  path("get-details",UserDetailAPIView.as_view()),
+  path('register',RegisterUserAPIView.as_view()),
 ]
