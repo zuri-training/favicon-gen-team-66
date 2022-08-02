@@ -33,6 +33,15 @@ SECRET_KEY = config(
 DEBUG = config("DEBUG", default=True, cast=bool)
 
 
+# SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = config(
+#     "SECRET_KEY ", 
+#     default='django-insecure-b5e=4+-nkh(ox^otzk)71+zbb!x6ovp8fca&opjdx&e*8t%p(_'
+#     )
+
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = config("DEBUG", default=True, cast=bool)
+
 ALLOWED_HOSTS = ["*"]
 
 
@@ -52,8 +61,8 @@ INSTALLED_APPS = [
     
     # my apps
     'account',
-]
 
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -65,14 +74,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
 ROOT_URLCONF = 'team66.urls'
-
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/"frontend/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,7 +91,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 WSGI_APPLICATION = 'team66.wsgi.application'
 
@@ -135,7 +141,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATICFILES_DIRS = [
+    BASE_DIR/'frontend/static/'
+    ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
