@@ -1,28 +1,21 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from rest_framework.validators import UniqueValidator
+from django.contrib.auth import authenticate
 
 
 User = get_user_model()
 MINIMUM_LENGTH = 6
 
-
-#Serializer to Get User Details using Django Token Authentication
 class UserSerializer(serializers.ModelSerializer):
-  class Meta:
-    model = User
-    fields = [
-        'username', 
-        'password', 
-        'password2',
-        'email', 
-        'first_name', 
-        'last_name'
-        ]
-
+    """ serializer for user information """
+    class Meta:
+        model = get_user_model()
+        fields = "__all__"
 
 #Serializer to Register User
 class RegisterSerializer(serializers.ModelSerializer):
+    """ serializer for registration of users """
     email = serializers.EmailField(
         required=True,
         validators=[UniqueValidator(queryset=User.objects.all())]
@@ -31,21 +24,21 @@ class RegisterSerializer(serializers.ModelSerializer):
         write_only = True,
         min_length = MINIMUM_LENGTH,
         error_messages = {
-            'minimum_length': f'Your password mist be more than {MINIMUM_LENGTH} characters'
+            'minimum_length': f'Your password must be more than {MINIMUM_LENGTH} characters'
         }
     )
-    
     password2 = serializers.CharField(
         write_only = True,
         min_length = MINIMUM_LENGTH,
         error_messages = {
-            'minimum_length': f'Your password mist be more than {MINIMUM_LENGTH} characters'
+            'minimum_length': f'Your password must be more than {MINIMUM_LENGTH} characters'
         }
     )
   
     class Meta:
-        model = User
+        model = get_user_model()
         fields = [
+            'pk',
             'username', 
             'password', 
             'password2',
@@ -54,8 +47,9 @@ class RegisterSerializer(serializers.ModelSerializer):
             'last_name'
             ]
         extra_kwargs = {
-        'first_name': {'required': True},
-        'last_name': {'required': True}
+            'email': {'required': True},
+            'first_name': {'required': True},
+            'last_name': {'required': True}
         }
         
       # validate that both passwords match
@@ -66,6 +60,7 @@ class RegisterSerializer(serializers.ModelSerializer):
     
     # create user if validation is successful
     def create(self, validated_data):
+        """ return output after creation """
         user = User.objects.create(
             email = validated_data['email'],
             username = validated_data['username'],
@@ -75,8 +70,41 @@ class RegisterSerializer(serializers.ModelSerializer):
         
         # pass the validated password
         user.set_password(validated_data['password'])
-        
-        # save the created user
+        # save and return the created user
         user.save()
-        
         return user
+
+class LoginSerializer(serializers.Serializer):
+    """ This is the serializer for logging in a user """
+    username = serializers.CharField(
+        label="Username",
+        write_only=True
+    )
+    password = serializers.CharField(
+        label="Password",
+        # This will be used when the DRF browsable API is enabled
+        style={'input_type': 'password'},
+        write_only=True
+    )
+
+    def validate(self, data):
+        # Take username and password from request
+        username = data.get('username')
+        password = data.get('password')
+
+        if username and password:
+            # Authenticate the user
+            user = authenticate(
+                request=self.context.get('request'),
+                username=username, 
+                password=password
+                )
+            if not user:
+                # Raise a ValidationError if user is not authenticated,
+                msg = 'Access denied: invalid username or password.'
+                raise serializers.ValidationError(msg, code='authorization')
+        else:
+            msg = 'Enter username or password'
+            raise serializers.ValidationError(msg, code='authorization')
+        data['user'] = user
+        return data
