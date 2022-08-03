@@ -156,7 +156,6 @@ All **`suggestions`** are welcome!
 > ##### README Created by `pauline-banye`
 
 
-
 #
 
 TODO
@@ -165,5 +164,3 @@ TODO
 - swagger documentation
 - testing
 - linting & precommit
-
-
