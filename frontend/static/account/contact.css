@@ -211,6 +211,10 @@ h1 {
         display: none;
     }
 
+    .gonedown {
+        display: block;
+    }
+
     h2 {
     margin-bottom: 2.5em;
     text-align: center;
