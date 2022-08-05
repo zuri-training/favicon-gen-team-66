@@ -219,4 +219,23 @@ h1 {
 .checkbox{
     margin-right: 1em;
 }
+
+button {
+    padding: 1.5em 3em;
+    border-radius: 1em;
+    background-color: #FD568A;
+    border: none;
+    color: #ffffff;
+    margin-right: 0;
+    float: right;
+    margin-top: 2em;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+button:hover{
+    background-color:#ffffff;
+    border: 1 solid grey;
+    color: #FD568A;
+}
 }
