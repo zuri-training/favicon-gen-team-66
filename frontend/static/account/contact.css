@@ -107,6 +107,10 @@ button {
 .faqs a:hover{
     color: #db1151
 }
+
+h2 {
+    margin-bottom: 2.5em;
+}
 @media screen and (max-width: 600px){
     .container {
         width: 100%;
