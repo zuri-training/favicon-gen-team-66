@@ -158,6 +158,10 @@ button:hover{
         flex-direction:column;
     } 
 
+    .content{
+        display: block;
+}
+
     .intro {
         width: 100%;
         padding: 1em;
@@ -170,7 +174,7 @@ button:hover{
     
 h1 {
     text-align: center;
-    margin: 2em 0;
+    margin: 1.5em 0;
 
 }
 
