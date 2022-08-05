@@ -190,10 +190,6 @@ h1 {
         margin-top: 1em;
         text-align: center;
     }
-
-    .push{
-        margin-bottom: 1em;
-    }
     
     .last {
         font-weight: bold;
@@ -207,14 +203,6 @@ h1 {
         margin-right: auto;
     }
 
-    .gone {
-        display: none;
-    }
-
-    .gonedown {
-        display: block;
-    }
-
     h2 {
     margin-bottom: 2.5em;
     text-align: center;
@@ -226,13 +214,12 @@ h1 {
 
 button {
     padding: 1.5em 3em;
-    border-radius: 1em;
+    border-radius: 0.5em;
     background-color: #FD568A;
     border: none;
     color: #ffffff;
-    margin-right: 0;
-    float: right;
     margin-top: 2em;
+    margin-bottom: 4em;
     width: 100%;
     font-size: 1.2em;
 }
@@ -242,4 +229,31 @@ button:hover{
     border: 1 solid grey;
     color: #FD568A;
 }
+    .gone {
+        display: none;
+    }
+
+.gonedown {
+    display: flex;
+    background-color: #E7E5E5;
+    border-radius: 1em;
+    width: 100%;
+    padding: 0.8em;
+}
+
+.contact {
+width: 38%;
+    font-size: 1.2em;
+    font-weight: 400;
+    text-align: left;
+    line-height: 2em;
+}
+ .push{
+width: 62%;
+    font-size: 1.2em;
+    font-weight: 400;
+    text-align: left;
+    line-height: 2em;
+
+  }
 }
