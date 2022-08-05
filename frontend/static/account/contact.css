@@ -86,3 +86,52 @@ button {
     color: grey;
     margin-top: 2em;
 }
+
+@media screen and (max-width: 425px){
+    .container {
+        width: 100%;
+        margin-left:auto;
+        margin-right: auto;
+        display: flex;
+        padding: 2em;
+        flex-direction:column;
+    } 
+
+    .intro {
+        width: 100%;
+        padding: 1em;
+    }
+    
+    .details {
+        width: 100%;
+        padding: 1em;
+    }
+    
+h2 {
+    text-align: center;
+    margin: 1em 0;
+
+}
+
+    p {
+        line-height: 20px;
+        margin-top: 1em;
+        text-align: center;
+    }
+
+    .push{
+        margin-bottom: 1em;
+    }
+    
+    .last {
+        font-weight: bold;
+        margin-top: 1em;
+    }
+
+    .faqs {
+        color: grey;
+        margin-top: 1.5em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
