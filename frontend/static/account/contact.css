@@ -152,6 +152,9 @@ button:hover{
 .gonedown {
     display: none;
 }
+.checkbox{
+    margin-right: 1em;
+}
 
 @media screen and (max-width: 600px){
     .container {
@@ -213,4 +216,7 @@ h1 {
     text-align: center;
 }
 
+.checkbox{
+    margin-right: 1em;
+}
 }
