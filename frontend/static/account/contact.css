@@ -99,12 +99,14 @@ button {
     text-align: justify;
 }
 
-.faqs {
-    margin-left: 8em;
-    color: grey;
-    margin-top: 2em;
+.faqs a {
+    color: #FD568A;
+    font-size: 1.5em;
 }
 
+.faqs a:hover{
+    color: #db1151
+}
 @media screen and (max-width: 600px){
     .container {
         width: 100%;
