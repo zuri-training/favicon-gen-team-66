@@ -148,6 +148,11 @@ button:hover{
     border: 1 solid grey;
     color: #FD568A;
 }
+
+.gonedown {
+    display: none;
+}
+
 @media screen and (max-width: 600px){
     .container {
         width: 100%;
@@ -174,8 +179,7 @@ button:hover{
     
 h1 {
     text-align: center;
-    margin: 1.5em 0;
-
+    margin: 0 0 1em 0;
 }
 
     p {
@@ -199,5 +203,14 @@ h1 {
         margin-left: auto;
         margin-right: auto;
     }
+
+    .gone {
+        display: none;
+    }
+
+    h2 {
+    margin-bottom: 2.5em;
+    text-align: center;
+}
 
 }
