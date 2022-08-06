@@ -105,3 +105,9 @@ ul > li {
     cursor: pointer;
     list-style-type: none;
 }
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+}
