@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from django.contrib.auth import get_user_model
 from rest_framework.validators import UniqueValidator
+from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate
 
 
@@ -34,7 +34,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             'minimum_length': f'Your password must be more than {MINIMUM_LENGTH} characters'
         }
     )
-  
+    
     class Meta:
         model = get_user_model()
         fields = [
@@ -106,5 +106,6 @@ class LoginSerializer(serializers.Serializer):
         else:
             msg = 'Enter username or password'
             raise serializers.ValidationError(msg, code='authorization')
+        
         data['user'] = user
         return data

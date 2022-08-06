@@ -58,10 +58,9 @@ class ProfileView(RetrieveAPIView):
     
 class UserList(ListAPIView):
     permission_classes = [IsAdminUser]
-    """ Admin View to list of all users """
+    """ Admin View to list of all of the users """
     
     queryset = User.objects.all()
     serializer_class = UserSerializer
     queryset = get_user_model().objects.all().order_by('date_joined')
     permission_classes = [IsAdminUser]
-   
