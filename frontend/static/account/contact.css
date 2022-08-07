@@ -45,10 +45,12 @@ h1 {
     font-size: 3em;
 }
 
+p {
+        margin-bottom: 2em;
+}
 .get {
     font-size: 1.5em;
     font-weight: 400;
-    margin-bottom: 1.5em;
     line-height: 1.5em;
     text-align: justify;
 }
@@ -56,7 +58,6 @@ h1 {
 .contact {
     font-size: 1.5em;
     font-weight: bold;
-    margin-bottom: 1.5em;
     line-height: 1.5em;
 }
 .formgroup {
@@ -87,21 +88,72 @@ button {
 }
 
 .push {
-    margin-bottom: 12em;
     font-size: 1.2em;
     font-weight: 400;
     line-height: 1.5em;
 }
 .last {
-    margin-top: 3em;
-    font-weight: bold;
-
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    line-height: 1.5em;
+    text-align: justify;
 }
 
-.faqs {
-    margin-left: 8em;
-    color: grey;
+.faqs a {
+    color: #FD568A;
+    font-size: 1.5em;
+}
+
+.faqs a:hover{
+    color: #db1151
+}
+
+h2 {
+    margin-bottom: 2.5em;
+}
+
+label {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+.box {
+    width: 100%;
+    height: 4em;
+    margin-top: 0.7em;
+    border-radius: 1em;
+    border: 1px solid grey;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    margin-top: 1em;
+    border-radius: 1em;
+}
+
+button {
+    padding: 1.5em 3em;
+    border-radius: 1em;
+    background-color: #FD568A;
+    border: none;
+    color: #ffffff;
+    margin-right: 0;
+    float: right;
     margin-top: 2em;
+}
+button:hover{
+    background-color:#ffffff;
+    border: 1 solid grey;
+    color: #FD568A;
+}
+
+.gonedown {
+    display: none;
+}
+.checkbox{
+    margin-right: 1em;
 }
 
 @media screen and (max-width: 600px){
@@ -113,6 +165,10 @@ button {
         padding: 2em;
         flex-direction:column;
     } 
+
+    .content{
+        display: block;
+}
 
     .intro {
         width: 100%;
@@ -126,18 +182,13 @@ button {
     
 h1 {
     text-align: center;
-    margin: 2em 0;
-
+    margin: 0 0 1em 0;
 }
 
     p {
         line-height: 20px;
         margin-top: 1em;
         text-align: center;
-    }
-
-    .push{
-        margin-bottom: 1em;
     }
     
     .last {
@@ -151,4 +202,58 @@ h1 {
         margin-left: auto;
         margin-right: auto;
     }
+
+    h2 {
+    margin-bottom: 2.5em;
+    text-align: center;
+}
+
+.checkbox{
+    margin-right: 1em;
+}
+
+button {
+    padding: 1.5em 3em;
+    border-radius: 0.5em;
+    background-color: #FD568A;
+    border: none;
+    color: #ffffff;
+    margin-top: 2em;
+    margin-bottom: 4em;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+button:hover{
+    background-color:#ffffff;
+    border: 1 solid grey;
+    color: #FD568A;
+}
+    .gone {
+        display: none;
+    }
+
+.gonedown {
+    display: flex;
+    background-color: #E7E5E5;
+    border-radius: 1em;
+    width: 100%;
+    padding: 0.8em;
+}
+
+.contact {
+width: 38%;
+    font-size: 1.2em;
+    font-weight: 400;
+    text-align: left;
+    line-height: 2em;
+}
+ .push{
+width: 62%;
+    font-size: 1.2em;
+    font-weight: 400;
+    text-align: left;
+    line-height: 2em;
+
+  }
 }

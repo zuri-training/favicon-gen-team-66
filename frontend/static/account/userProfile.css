@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.wrapper {
+
+}
+.absolute{
+    position: relative;
+}
+.sticky {
+    position: sticky;
+}
+.full-h {
+    height: 100vh;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+.bg-side-bar {
+    background-image: url(../../templates/account/images/bg-side-bar.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: contain;
+}
+.flex {
+    display: flex;
+}
+.nav-gap {
+    gap: 5px;
+}
+.user-bg {
+    background-color: #EADFDF;
+}
+.p-user {
+    padding: 20px 60px 20px 20px;
+}
+/* .w-user-image-box {
+    height: 100px;
+    width: 100px;
+} */
+
+.object-contain {
+    object-fit: contain;
+}
+.user-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+} 
+.user-image-box {
+    max-width: 150px;
+    height: 150px;
+    /* align-items: center; */
+}
+.items-center {
+    align-items: center;
+}
+.gap-user {
+    gap: 10px;
+}
+.my-section {
+    margin: 30px 0;
+}
+.p-bottom {
+    margin-bottom: 10px;
+}
+.f-wrap {
+    flex-wrap: wrap;
+}
+.f-gap {
+    gap: 10px;
+}
+.bg-white {
+    background-color: #FCFCFC;
+}
+.p-gen-favicon {
+    padding: 10px;
+}
+.overflow {
+    overflow-y: auto ;
+}
+.h-gen-favicon {
+    height: 270px;
+}
+.w-gen-code {
+    width: 45%
+}
+.f-space-between {
+    justify-content: space-between;
+}
+/* .float-right {
+    float: right;
+} */
+
+ul > li {
+    margin: 30px 5px;
+    padding: 10px 0;
+    color: white;
+    cursor: pointer;
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+}
