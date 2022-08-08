@@ -25,20 +25,26 @@
               <li><a href="#" target="_blank" rel="noopener noreferrer">Contact us</a></li>
               <li><a href="#" target="_blank" rel="noopener noreferrer">Tutorial</a></li>
             </ul>
-            
-            <nav class="flex">
-              <!-- <ul class="flex f-col mobile-nav-items">
-                <li><a href="#" target="_blank" rel="noopener noreferrer">Favicons</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">Contact us</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">Tutorial</a></li>
-                <li>Change Password</li>
-                <li>Sign Out</li>
-              </ul> -->
-              <img class="menu-icon" src="../account/images/menu-icon.svg" alt="menu icon">
-
+          </nav>
+          <nav class="flex mobile">
+            <ul id="menus" class="flex f-col mobile-nav-items">
+              <li><a href="#" target="_blank" rel="noopener noreferrer">Favicons</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer">Contact us</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer">Tutorial</a></li>
+              <li>Change Password</li>
+              <li>Sign Out</li>
+            </ul>
+            <a 
+              href="javascript:void(0);" 
+              class="menu-icon"
+              onclick="handleShowMenu()"
+            >
+              <img onclick="changeMenuIcon(this)" class="menu-icon" src="../account/images/menu-icon.svg" alt="menu icon">
+            </a>
           </nav>
         </div>
       </header>
+
       <main>
         <div class="grid">
           <nav class="side-bar bg-side-bar">
@@ -198,5 +204,19 @@
         Footer
       </footer> -->
     </div>
+
+    <script>
+      function handleShowMenu() {
+        var x = document.getElementById("menus");
+        if(x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      } 
+    </script>
+    <script>
+      
+    </script>
   </body>
 </html>
