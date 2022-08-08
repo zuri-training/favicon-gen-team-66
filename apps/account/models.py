@@ -49,7 +49,7 @@ class UserProfileManager(BaseUserManager):
 class UserProfile(AbstractBaseUser, PermissionsMixin):
     """represents a user profile in our database"""
     user = models.OneToOneField(settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=100, null=True)
+    username = models.CharField(max_length=100, null=True)
     name=models.CharField(max_length=100, null=True)
     title = models.CharField(max_length=50, blank=True)
     email = models.EmailField(max_length=254, unique=True, editable=True, null=True)
@@ -69,7 +69,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         return self.name
     def get_short_name(self):
         """used to get user first/short name"""    
-        return self.first_name
+        return self.username
     
     def __str__(self):
         """to convert the object to a string"""  

@@ -1,10 +1,12 @@
 from rest_framework.permissions import AllowAny, IsAdminUser
 from django.contrib.auth import get_user_model
 from django.conf import settings
+from . import models
 from .serializer import (
     UserSerializer, 
     RegisterSerializer,
-    LoginSerializer
+    LoginSerializer,
+    UserProfileSerializer
     )
 from .permissions import (
     IsCreatorOrAdmin
@@ -13,12 +15,12 @@ from rest_framework.generics import (
     CreateAPIView, 
     ListAPIView, 
     RetrieveAPIView,
-    ListAPIView
+    UpdateAPIView
     )
 from rest_framework.response import Response
 from django.contrib.auth import login, logout
 from rest_framework.views import APIView
-from rest_framework import status
+from rest_framework import status, viewsets
 
 User = settings.AUTH_USER_MODEL
 
@@ -58,7 +60,6 @@ class ProfileView(RetrieveAPIView):
         return self.request.user
     
 class UserList(ListAPIView):
-    permission_classes = [IsAdminUser]
     """ Admin View to list of all users """
     
     # queryset = User.objects.all()
@@ -67,3 +68,9 @@ class UserList(ListAPIView):
     # permission_classes = [IsAdminUser]
     pass
    
+class UserProfileViewSet(viewsets.ModelViewSet):
+    """handles all CRUD operation on Profiles"""
+    
+    serializer_class=UserProfileSerializer
+    queryset=models.UserProfile.objects.all()
+    

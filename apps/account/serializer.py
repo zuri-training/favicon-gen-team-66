@@ -2,6 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth import authenticate
+from . import models
 
 
 User = get_user_model()
@@ -108,3 +109,27 @@ class LoginSerializer(serializers.Serializer):
             raise serializers.ValidationError(msg, code='authorization')
         data['user'] = user
         return data
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    """serializer for user profile objects"""
+    
+    class Meta:
+        model=models.UserProfile
+        fields=('id','email', 'password', 'name', 'username')
+        extra_kwargs={
+            'password': {'write_only': True},
+            'email': {'required': True},
+            'name': {'required': True}
+        }
+        
+        def create(self, validated_data):
+            """create and returns new user"""
+            user=models.UserProfile(
+                  email = validated_data ['email'],
+                  name = validated_data['name']
+            )
+            
+            user.set_password(validated_data['password'])
+            user.save()
+            
+            return user
