@@ -1,5 +1,6 @@
 from rest_framework.permissions import AllowAny, IsAdminUser
 from django.contrib.auth import get_user_model
+from django.conf import settings
 from .serializer import (
     UserSerializer, 
     RegisterSerializer,
@@ -19,7 +20,7 @@ from django.contrib.auth import login, logout
 from rest_framework.views import APIView
 from rest_framework import status
 
-User = get_user_model()
+User = settings.AUTH_USER_MODEL
 
 #Class based view to register user
 class RegisterUserAPIView(CreateAPIView):
@@ -60,8 +61,9 @@ class UserList(ListAPIView):
     permission_classes = [IsAdminUser]
     """ Admin View to list of all users """
     
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    queryset = get_user_model().objects.all().order_by('date_joined')
-    permission_classes = [IsAdminUser]
+    # queryset = User.objects.all()
+    # serializer_class = UserSerializer
+    # queryset = get_user_model().objects.all().order_by('date_created')
+    # permission_classes = [IsAdminUser]
+    pass
    
