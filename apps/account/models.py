@@ -17,6 +17,25 @@ class Profile(models.Model):
     def __unicode__ (self) -> any:
         return self.name
 
+
+#userprofilemanager
+class UserProfileManager(BaseUserManager):
+    """helps django work with our docstring"""
+    def create_user(self, email, first_name, last_name, password):
+        """creates a new profile object."""
+        
+        if not email:
+            raise ValueError('Users must have an email address')
+        
+        email=self.normalize_email(email) #normalizes the email address
+        user = self.model(email=email, name= first_name)
+        
+        user.set_password(password)
+        user.save(using=self._db)
+        
+        return user
+
+    def create_superuser(self, email, name, password)
 #expanded model
 class UserProfile(AbstractBaseUser, PermissionsMixin):
     """represents a user profile in our database"""
@@ -49,6 +68,3 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     #returning a field unique to the user
 
 
-#userprofilemanager
-class UserProfileManager:
-    passA
