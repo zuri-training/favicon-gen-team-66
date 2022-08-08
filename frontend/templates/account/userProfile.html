@@ -15,20 +15,33 @@
     <link rel="stylesheet" href="../../static/account/userProfile.css" />
   </head>
   <body>
-    <div class="wrapper  absolute full-h">
-      <header class="flex items-center f-space-between style="top:0; height: 40px; background: grey; position: sticky;">
-        <div><img src="../account/images/logo.png" alt="logo"></div>
-        <nav class="top-nav-bar">
-          <ul class="flex">
-            <li><a href="#" target="_blank" rel="noopener noreferrer">Favicons</a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer">Contact us</a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer">Tutorial</a></li>
-          </ul>
-        </nav>
+    <div class="wrapper  absolute">
+      <header class="top-nav-bar items-center justify-between " style="top:0; background: grey; position: sticky;">
+        <div class=""><img src="../account/images/logo.png" alt="logo"></div>
+        <div class="flex justify-center">
+          <nav class="flex">
+            <ul class="flex nav-items">
+              <li><a href="#" target="_blank" rel="noopener noreferrer">Favicons</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer">Contact us</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer">Tutorial</a></li>
+            </ul>
+            
+            <nav class="flex">
+              <!-- <ul class="flex f-col mobile-nav-items">
+                <li><a href="#" target="_blank" rel="noopener noreferrer">Favicons</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">Contact us</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">Tutorial</a></li>
+                <li>Change Password</li>
+                <li>Sign Out</li>
+              </ul> -->
+              <img class="menu-icon" src="../account/images/menu-icon.svg" alt="menu icon">
+
+          </nav>
+        </div>
       </header>
       <main>
         <div class="grid">
-          <nav class="bg-side-bar">
+          <nav class="side-bar bg-side-bar">
             <ul class="ul">
               <li class="nav-items">
                 <div class="flex nav-gap">
@@ -57,7 +70,7 @@
               <li>
                 <div class="flex nav-gap">
                   <img src="images/logout.svg" alt="log out">
-                  <span>Log Out</span>
+                  <span>Sign Out</span>
                 </div>
               </li>
             </ul>
@@ -154,18 +167,18 @@
 
             <section class="my-section p-bottom">
               <h2 class="p-bottom">Saved HTML code</h2>
-              <div class="flex f-space-between ">
+              <div class="flex justify-between sm-f-col">
                 <div class="w-gen-code">
                   <div>
-                    <img src="images/generated-code.svg" alt="generated-code">
+                    <img class="object-contain" width="100%" src="images/generated-code.svg" alt="generated-code">
                   </div>
-                  <img class="float-rigth" src="images/copy-code.svg" alt="">
+                  <img class="" src="images/copy-code.svg" alt="">
                 </div> 
                 <div class="w-gen-code">
                   <div>
-                    <img src="images/generated-code.svg" alt="generated-code">
+                    <img class="object-contain" width="100%" src="images/generated-code.svg" alt="generated-code">
                   </div>
-                  <img class="float-rigth" src="images/copy-code.svg" alt="">
+                  <img class="" src="images/copy-code.svg" alt="">
                 </div>
               </div>
             </section>
@@ -173,7 +186,7 @@
           
         </div>
       </main>
-      <footer
+      <!-- <footer
         style="
           height: 60px;
           background: blue;
@@ -183,7 +196,7 @@
         "
       >
         Footer
-      </footer>
+      </footer> -->
     </div>
   </body>
 </html>
