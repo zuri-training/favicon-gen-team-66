@@ -51,4 +51,4 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
 
 #userprofilemanager
 class UserProfileManager:
-    pass
+    passA
