@@ -142,6 +142,9 @@ Next create a `.env` file by using the sample.env. Retrieve your secret key from
 | `User profile` | http://127.0.0.1:8000/profile |
 | `User List` | http://127.0.0.1:8000/users
  |
+| `Favicon Generator` | http://127.0.0.1:8000/faviconer/add
+ |
+
 > ## Status
 This project is a work in progress and is currently under development.
 
