@@ -1,4 +1,5 @@
 from rest_framework.permissions import AllowAny, IsAdminUser
+from rest_framework.authentication import TokenAuthentication
 from django.contrib.auth import get_user_model
 from django.conf import settings
 from . import models
@@ -9,7 +10,8 @@ from .serializer import (
     UserProfileSerializer
     )
 from .permissions import (
-    IsCreatorOrAdmin
+    IsCreatorOrAdmin,
+    UpdateOwnProfile,
 )
 from rest_framework.generics import (
     CreateAPIView, 
@@ -20,7 +22,7 @@ from rest_framework.generics import (
 from rest_framework.response import Response
 from django.contrib.auth import login, logout
 from rest_framework.views import APIView
-from rest_framework import status, viewsets
+from rest_framework import status, viewsets, filters
 
 User = settings.AUTH_USER_MODEL
 
@@ -73,4 +75,8 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     
     serializer_class=UserProfileSerializer
     queryset=models.UserProfile.objects.all()
+    authentication_classes=(TokenAuthentication,)
+    permission_classes=(UpdateOwnProfile,)
+    filter_backends=(filters.SearchFilter,)
+    search_fields=('username','name','email',)
     
