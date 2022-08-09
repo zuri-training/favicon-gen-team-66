@@ -11,7 +11,7 @@ MINIMUM_LENGTH = 6
 class UserSerializer(serializers.ModelSerializer):
     """ serializer for user information """
     class Meta:
-        model = get_user_model()
+        model = models.UserProfile
         fields = "__all__"
 
 #Serializer to Register User
@@ -37,20 +37,22 @@ class RegisterSerializer(serializers.ModelSerializer):
     )
   
     class Meta:
-        model = get_user_model()
+        model = models.UserProfile
         fields = [
             'pk',
             'username', 
             'password', 
             'password2',
             'email', 
-            'first_name', 
-            'last_name'
+            'name'
+            # 'first_name', 
+            # 'last_name'
             ]
         extra_kwargs = {
             'email': {'required': True},
-            'first_name': {'required': True},
-            'last_name': {'required': True}
+            'name': {'required': True}
+            # 'first_name': {'required': True},
+            # 'last_name': {'required': True}
         }
         
       # validate that both passwords match

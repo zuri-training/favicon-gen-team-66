@@ -61,12 +61,12 @@ class ProfileView(RetrieveAPIView):
     
 class UserList(ListAPIView):
     """ Admin View to list of all users """
-    
-    # queryset = User.objects.all()
-    # serializer_class = UserSerializer
-    # queryset = get_user_model().objects.all().order_by('date_created')
-    # permission_classes = [IsAdminUser]
-    pass
+    User=models.UserProfile
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    queryset = User.objects.all().order_by('date_created')
+    permission_classes = [IsAdminUser]
+
    
 class UserProfileViewSet(viewsets.ModelViewSet):
     """handles all CRUD operation on Profiles"""
