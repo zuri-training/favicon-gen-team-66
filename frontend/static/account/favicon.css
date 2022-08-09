@@ -1,0 +1,246 @@
+/* Main favicon page. */
+
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    max-width: 100%;
+    min-height: auto;
+}
+
+.mainDivs{
+    border-bottom: solid rgb(211, 210, 210) 2px;
+    width: 100%;
+    
+}
+
+.secondDivs{
+    background-color: rgb(211, 210, 210);
+    position: relative;
+    width: 80%;
+    margin: 2% 9% 5% 9%;
+    padding: 2% 1% 2% 2%;
+    border-radius: 5px;
+}
+
+.headings{
+    margin-left: 9%;
+}
+
+#para1{
+    font-size: 30px;
+    width: 40%;
+}
+
+#para2{
+    font-size: 30px;
+    width: 35%;
+}
+
+#thirdDiv{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+}
+
+#choosefile{
+    display: none;
+}
+
+#label1{
+    cursor: pointer;
+    background-color: white;
+    padding: 2% 2%;
+    border-radius: 4px;
+    font-size: large;
+    margin-right: 6%;
+    margin-left: 50%;
+}
+
+#fourthDiv{
+    flex: auto;
+    border: none;
+    padding-top: 4%;
+}
+
+#btn1{
+    padding: 2% 5%;
+    font-size: large;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(73, 71, 71, 0.856);
+    color: white;
+}
+
+#fifthDiv{
+    display: flex;
+    flex-direction: row;
+}
+
+#sixthDiv{
+    flex: 1 1 auto;
+    border: none;
+}
+
+#textDiv1a{
+    display: inline-flex;
+}
+
+.textfont{
+    border: solid 1px rgb(161, 159, 159);
+    padding: 5% 30%;
+    width: 70%;
+    border: 8%;
+    flex: 50%;
+    border-radius: 0px;
+}
+
+input[type=text]{
+    margin-left: 0%;
+    padding: 1% 40%;
+    flex: 50%;
+    border-radius: 0px;
+    border: solid rgb(161, 159, 159);
+    border-width: 1px 1px 1px 0px;
+}
+
+::placeholder{
+    text-align: center;
+    font-size: 18px;
+}
+
+#btn2{
+    border-radius: 5px;
+    padding: 3% 4%;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(37, 36, 36, 0.5);
+    border: none;
+    margin: 3% 0 0 70%;
+}
+
+.btn3{
+    padding: 2% 4%;
+    font-size: 110%;
+    font-weight: 500;
+    border: none;
+    background-color: rgba(73, 71, 71, 0.856);
+    border-radius: 6px;
+    color: white;
+    margin-right: 1%;
+    margin-left: 25%;
+}
+
+/* #btn34{
+    border: solid 1px;
+
+} */
+
+#textDiv{
+    display: flex;
+    flex-direction: row;
+    /* border: solid 1px; */
+    margin-bottom: 2%;
+}
+
+#textDiv1{
+    flex: 100%;
+    /* border: solid 1px; */
+}
+
+
+
+#textDiv2{
+    flex: 100%;
+    /* border: solid 1px; */
+}
+
+.btn4{
+    padding: 2% 2% 2% 2%;
+    font-size: 110%;
+    font-weight: 500;
+    border: none;
+    background-color: rgba(73, 71, 71, 0.856);
+    border-radius: 6px;
+    color: white;
+}
+
+.fa-download{
+    margin-left: 10px;
+}
+
+.btn5{
+    padding: 1% 2%;
+    border: none;
+    border-radius: 8%;
+    font-size: 100%;
+    font-weight: 500;
+    margin-right: 3%;
+    background-color: rgba(75, 73, 73, 0.281);
+}
+
+.preview{
+    font-weight: 600;
+    margin-left: 40%;
+    font-size: 20px;
+}
+
+.prevImage{
+    width: 50%;
+    height: 65%;
+    /* border-radius: 100%; */
+    margin-bottom: 3%;
+    margin-left: 22%;
+}
+
+#iconDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* border: solid 1px; */
+    margin-bottom: 2%;
+}
+
+.icons{
+    width: 13%;
+    height: 20%;
+    border-radius: 50%;
+    margin-right: 5%;
+}
+
+#iconDiv1{
+    flex: 50%;
+    /* border: solid 1px; */
+    padding-top: 7%;
+}
+
+#iconDiv2{
+    flex: 50%;
+}
+
+footer{
+    background-color: rgba(29, 28, 28, 0.89);
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+#footer{
+    display: flex;
+    margin: 3% 12%;
+    color: white;
+}
+
+
+/* Favicon modal page */
+
+.para4{
+    font-weight: 600; 
+    font-size: larger;
+    text-align: center;
+}
+
+#previmage1{
+    width: 20%;
+    height: 20%;
+}
