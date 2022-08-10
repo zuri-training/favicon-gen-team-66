@@ -11,6 +11,3 @@ I have also added
 ** https://github.com/zuri-training/favicon-gen-team-66/issues/3
 
 ** https://github.com/zuri-training/favicon-gen-team-66/issues/34
-
-end
-
