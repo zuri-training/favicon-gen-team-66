@@ -8,6 +8,7 @@
     - [Virtual Environment](#virtual-environment)
     - [Django Installation](#django-installation)
   - [Env Setup](#env-setup)
+- [List of available endpoints](#list-of-available-endpoints)
 - [Status](#contributors)
 - [Contributors](#contributors)
 - [Contributing to the project](#contributing-to-the-project)
@@ -128,8 +129,19 @@ $ pip install -r requirements.txt
 
 > ### Env Setup
 Next create a `.env` file by using the sample.env. Retrieve your secret key from settings.py and place it within the `.env` file.
-
 #
+
+
+> ## List of available endpoints
+
+| <b><u>View</u></b> | <b><u>URL</u></b> | 
+| :---         | :---         |
+| `Register User`| http://127.0.0.1:8000/register |
+| `Login User`| http://127.0.0.1:8000/login |
+| `Logout User` | http://127.0.0.1:8000/logout |
+| `User profile` | http://127.0.0.1:8000/profile |
+| `User List` | http://127.0.0.1:8000/users
+ |
 > ## Status
 This project is a work in progress and is currently under development.
 
@@ -156,14 +168,11 @@ All **`suggestions`** are welcome!
 > ##### README Created by `pauline-banye`
 
 
-
 #
 
 TODO
 - frontend setup
-- deployed link
-- swagger documentation
 - testing
 - linting & precommit
-
-
+- swagger documentation
+- deployed link

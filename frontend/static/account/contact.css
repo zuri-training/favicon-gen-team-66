@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #E7EEFC;
+    font-size: 0.8750em;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    line-height: 120%;
+    color: #1F1D1D;
+}
+
+.container {
+    width: 90%;
+    margin-left:auto;
+    margin-right: auto;
+    padding: 2em;
+} 
+
+.content{
+        display: flex;
+}
+
+.intro {
+    width: 50%;
+    padding: 0 4em;
+}
+
+.details {
+    width: 50%;
+    padding: 0 4em;
+}
+
+
+
+h1 {
+    text-align: left;
+    margin: 2em 0 2em 6em;
+    word-spacing: 7px;
+    font-size: 3em;
+}
+
+p {
+        margin-bottom: 2em;
+}
+.get {
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+.contact {
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+.formgroup {
+    margin-bottom: 1em;
+}
+
+.box {
+    width: 100%;
+    height: 2em;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+}
+
+button {
+
+    padding: 0.6em;
+    border-radius: 10px;
+    background-color: #3a3838;
+    border: none;
+    color: #ffffff;
+    margin-right: 0;
+    float: right;
+    margin-top: 2em;
+
+}
+
+.push {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+.last {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+.faqs a {
+    color: #FD568A;
+    font-size: 1.5em;
+}
+
+.faqs a:hover{
+    color: #db1151
+}
+
+h2 {
+    margin-bottom: 2.5em;
+}
+
+label {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+.box {
+    width: 100%;
+    height: 4em;
+    margin-top: 0.7em;
+    border-radius: 1em;
+    border: 1px solid grey;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    margin-top: 1em;
+    border-radius: 1em;
+}
+
+button {
+    padding: 1.5em 3em;
+    border-radius: 1em;
+    background-color: #FD568A;
+    border: none;
+    color: #ffffff;
+    margin-right: 0;
+    float: right;
+    margin-top: 2em;
+}
+button:hover{
+    background-color:#ffffff;
+    border: 1 solid grey;
+    color: #FD568A;
+}
+
+.gonedown {
+    display: none;
+}
+.checkbox{
+    margin-right: 1em;
+}
+
+@media screen and (max-width: 600px){
+    .container {
+        width: 100%;
+        margin-left:auto;
+        margin-right: auto;
+        display: flex;
+        padding: 2em;
+        flex-direction:column;
+    } 
+
+    .content{
+        display: block;
+}
+
+    .intro {
+        width: 100%;
+        padding: 1em;
+    }
+    
+    .details {
+        width: 100%;
+        padding: 1em;
+    }
+    
+h1 {
+    text-align: center;
+    margin: 0 0 1em 0;
+}
+
+    p {
+        line-height: 20px;
+        margin-top: 1em;
+        text-align: center;
+    }
+    
+    .last {
+        font-weight: bold;
+        margin-top: 1em;
+    }
+
+    .faqs {
+        color: grey;
+        margin-top: 1.5em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h2 {
+    margin-bottom: 2.5em;
+    text-align: center;
+}
+
+.checkbox{
+    margin-right: 1em;
+}
+
+button {
+    padding: 1.5em 3em;
+    border-radius: 0.5em;
+    background-color: #FD568A;
+    border: none;
+    color: #ffffff;
+    margin-top: 2em;
+    margin-bottom: 4em;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+button:hover{
+    background-color:#ffffff;
+    border: 1 solid grey;
+    color: #FD568A;
+}
+    .gone {
+        display: none;
+    }
+
+.gonedown {
+    display: flex;
+    background-color: #E7E5E5;
+    border-radius: 1em;
+    width: 100%;
+    padding: 0.8em;
+}
+
+.contact {
+width: 38%;
+    font-size: 1.2em;
+    font-weight: 400;
+    text-align: left;
+    line-height: 2em;
+}
+ .push{
+width: 62%;
+    font-size: 1.2em;
+    font-weight: 400;
+    text-align: left;
+    line-height: 2em;
+
+  }
+}
