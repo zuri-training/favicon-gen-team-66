@@ -4,9 +4,10 @@ I have created a doc file and attached the link below to show my contributions w
 
 I have also added
 
-* The page Url : https://ismailmuhammed2019.github.io/favicon-gen-contactus/*
+* The page Url : https://ismailmuhammed2019.github.io/favicon-gen-contactus/
 
-* The Issues Urls:*
-**https://github.com/zuri-training/favicon-gen-team-66/issues/3**
+* The Issues Urls:
 
-**https://github.com/zuri-training/favicon-gen-team-66/issues/34**
+**https://github.com/zuri-training/favicon-gen-team-66/issues/3
+
+**https://github.com/zuri-training/favicon-gen-team-66/issues/34
