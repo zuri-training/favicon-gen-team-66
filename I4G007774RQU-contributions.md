@@ -8,6 +8,6 @@ I have also added
 
 * The Issues Urls:
 
-**https://github.com/zuri-training/favicon-gen-team-66/issues/3
+** https://github.com/zuri-training/favicon-gen-team-66/issues/3
 
-**https://github.com/zuri-training/favicon-gen-team-66/issues/34
+** https://github.com/zuri-training/favicon-gen-team-66/issues/34
