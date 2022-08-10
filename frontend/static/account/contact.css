@@ -145,6 +145,7 @@ button {
     margin-right: 0;
     float: right;
     margin-top: 2em;
+    font-size: initial;
 }
 button:hover{
     background-color:#ffffff;
@@ -236,7 +237,6 @@ button {
     margin-top: 2em;
     margin-bottom: 4em;
     width: 100%;
-    font-size: initial;
 }
 
 button:hover{
