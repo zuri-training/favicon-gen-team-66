@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="wrapper  absolute">
-      <header class="top-nav-bar items-center justify-between " style="top:0; background: grey; position: sticky;">
+      <header class="top-nav-bar items-center flex justify-between " style="top:0; background: grey; position: sticky;">
         <div class=""><img src="../account/images/logo.png" alt="logo"></div>
         <div class="flex justify-center">
           <nav class="flex">
@@ -26,6 +26,7 @@
               <li><a href="#" target="_blank" rel="noopener noreferrer">Tutorial</a></li>
             </ul>
           </nav>
+
           <nav class="flex mobile">
             <ul id="menus" class="flex f-col mobile-nav-items">
               <li><a href="#" target="_blank" rel="noopener noreferrer">Favicons</a></li>
@@ -43,6 +44,7 @@
             </a>
           </nav>
         </div>
+        <button style="padding:10px; border: 2px #9E9C9C; ;">Log out</button>
       </header>
 
       <main>
@@ -59,18 +61,6 @@
                 <div class="flex nav-gap">
                   <img src="images/edit.svg" alt="Edit profile">
                   <span>Edit Profile</span>
-                </div>
-              </li>
-               <li>
-                <div class="flex nav-gap">
-                  <img src="images/messages.svg" alt="Mail us">
-                  <span>Mail Us</span>
-                </div>
-              </li>
-              <li>
-                <div class="flex nav-gap">
-                  <img src="images/lock.svg" alt="change password">
-                  <span>Change Password</span>
                 </div>
               </li>
               <li>
@@ -149,7 +139,8 @@
                 <img src="images/Rectangle 1085.svg" alt="">
                 <img src="images/Rectangle 1086.svg" alt="">
                 <img src="images/Rectangle 1087.svg" alt="">
-                <img src="images/Rectangle 1088.svg" alt=""><img src="images/Rectangle 1079.svg" alt="">
+                <img src="images/Rectangle 1088.svg" alt="">
+                <img src="images/Rectangle 1079.svg" alt="">
                 <img src="images/Rectangle 1080.svg" alt="">
                 <img src="images/Rectangle 1081.svg" alt="">
                 <img src="images/Rectangle 1082.svg" alt="">
@@ -158,7 +149,8 @@
                 <img src="images/Rectangle 1085.svg" alt="">
                 <img src="images/Rectangle 1086.svg" alt="">
                 <img src="images/Rectangle 1087.svg" alt="">
-                <img src="images/Rectangle 1088.svg" alt=""><img src="images/Rectangle 1079.svg" alt="">
+                <img src="images/Rectangle 1088.svg" alt="">
+                <img src="images/Rectangle 1079.svg" alt="">
                 <img src="images/Rectangle 1080.svg" alt="">
                 <img src="images/Rectangle 1081.svg" alt="">
                 <img src="images/Rectangle 1082.svg" alt="">
@@ -173,18 +165,41 @@
 
             <section class="my-section p-bottom">
               <h2 class="p-bottom">Saved HTML code</h2>
-              <div class="flex justify-between sm-f-col">
+              <div class="rounded flex justify-between sm-f-col bg-white">
                 <div class="w-gen-code">
                   <div>
-                    <img class="object-contain" width="100%" src="images/generated-code.svg" alt="generated-code">
+                    <!-- Saved generated code -->
+                    <!-- The 'id' below should be dynamic -->
+                    <div id="code1">
+                    Code1 is here
+                      <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+                      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+                      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+                      <link rel="manifest" href= "/site.webmanifest">
+                      <meta name="msapplication-Til eColor" content="#da532c">
+                      <meta name="theme-color" content="#ffffff"> -->
+                    </div>
                   </div>
-                  <img class="" src="images/copy-code.svg" alt="">
+                  <button onclick="copyCode1()" class="btn-copy-code">
+                    <img src="images/copy-code.svg">
+                  </button>
                 </div> 
                 <div class="w-gen-code">
                   <div>
-                    <img class="object-contain" width="100%" src="images/generated-code.svg" alt="generated-code">
+                    <!-- Saved generated code -->
+                    <div id="code2">
+                    Code2 is here
+                      <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+                      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+                      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+                      <link rel="manifest" href= "/site.webmanifest">
+                      <meta name="msapplication-Til eColor" content="#da532c">
+                      <meta name="theme-color" content="#ffffff"> -->
+                    </div>
                   </div>
-                  <img class="" src="images/copy-code.svg" alt="">
+                  <button onclick="copyCode2()" class="btn-copy-code">
+                    <img src="images/copy-code.svg">
+                  </button>
                 </div>
               </div>
             </section>
@@ -216,7 +231,26 @@
       } 
     </script>
     <script>
-      
+      function copyCode1() {
+        
+        var getCode = document.getElementById("code1").innerHTML;
+        console.log(getCode);
+        
+        navigator.clipboard.writeText(getCode);
+       
+        alert ("Code1 copied");
+      }
+    </script>
+    <script>
+      function copyCode2() {
+        
+        var getCode = document.getElementById("code2").innerHTML;
+        console.log(getCode);
+        
+        navigator.clipboard.writeText(getCode);
+       
+        alert ("Code2 copied");
+      }
     </script>
   </body>
 </html>
