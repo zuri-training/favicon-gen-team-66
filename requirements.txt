@@ -11,3 +11,5 @@ pytz==2022.1
 sqlparse==0.4.2
 tzdata==2022.1
 django-allauth==0.51.0
+drf_social_oauth2==1.2.1
+drf-yasg==1.21.3

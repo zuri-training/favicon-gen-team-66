@@ -3,11 +3,11 @@ from tkinter import CASCADE
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
-
 # Create your models here.
 
 #base model
 class Profile(models.Model):
+    """Basemodel for User"""
     user = models.OneToOneField(settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, null=True)
     title = models.CharField(max_length=50, blank=True)
@@ -26,7 +26,7 @@ class UserProfileManager(BaseUserManager):
         """creates a new profile object."""
         
         if not email:
-            raise ValueError('Users must have an email address')
+            raise ValueError('User must have an email address')
         
         email=self.normalize_email(email) #normalizes the email address
         user = self.model(email=email, name= name)
@@ -45,6 +45,9 @@ class UserProfileManager(BaseUserManager):
         
         user.save(using=self._db)
         return user
+    
+    
+AUTH_PROVIDERS = {'facebook': 'facebook', 'google': 'google', 'email': 'email'}
 #expanded model
 class UserProfile(AbstractBaseUser, PermissionsMixin):
     """represents a user profile in our database"""
@@ -57,6 +60,9 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     date_updated = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
     is_staff= models.BooleanField(default=False)
+    auth_provider = models.CharField(
+        max_length=255, blank=False,
+        null=False, default=AUTH_PROVIDERS.get('email'))
     
     objects=UserProfileManager()
     
@@ -75,5 +81,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         """to convert the object to a string"""  
         return self.email
     #returning a field unique to the user
-
-
+    
+class UserHistory(models.Model):
+    """User specific history"""
+    user_profile= models.ForeignKey('UserProfile', on_delete=models.CASCADE)
