@@ -2,6 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth import authenticate
+from . import models
 
 
 User = get_user_model()
@@ -10,7 +11,7 @@ MINIMUM_LENGTH = 6
 class UserSerializer(serializers.ModelSerializer):
     """ serializer for user information """
     class Meta:
-        model = get_user_model()
+        model = models.UserProfile
         fields = "__all__"
 
 #Serializer to Register User
@@ -36,20 +37,22 @@ class RegisterSerializer(serializers.ModelSerializer):
     )
   
     class Meta:
-        model = get_user_model()
+        model = models.UserProfile
         fields = [
             'pk',
             'username', 
             'password', 
             'password2',
             'email', 
-            'first_name', 
-            'last_name'
+            'name'
+            # 'first_name', 
+            # 'last_name'
             ]
         extra_kwargs = {
             'email': {'required': True},
-            'first_name': {'required': True},
-            'last_name': {'required': True}
+            'name': {'required': True}
+            # 'first_name': {'required': True},
+            # 'last_name': {'required': True}
         }
         
       # validate that both passwords match
@@ -108,3 +111,27 @@ class LoginSerializer(serializers.Serializer):
             raise serializers.ValidationError(msg, code='authorization')
         data['user'] = user
         return data
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    """serializer for user profile objects"""
+    
+    class Meta:
+        model=models.UserProfile
+        fields=('id','email', 'password', 'name', 'username')
+        extra_kwargs={
+            'password': {'write_only': True},
+            'email': {'required': True},
+            'name': {'required': True}
+        }
+        
+        def create(self, validated_data):
+            """create and returns new user"""
+            user=models.UserProfile(
+                  email = validated_data ['email'],
+                  name = validated_data['name']
+            )
+            
+            user.set_password(validated_data['password'])
+            user.save()
+            
+            return user
