@@ -1,9 +1,9 @@
-from ast import BinOp
-from tkinter import CASCADE
+import uuid
+
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
-
+from django.utils.http import int_to_base36
 # Create your models here.
 
 #base model
@@ -75,5 +75,3 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         """to convert the object to a string"""  
         return self.email
     #returning a field unique to the user
-
-

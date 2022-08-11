@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     
     # my apps
     'apps.account',
+    'apps.faviconer'
 ]
 
 # REST_FRAMEWORK = {

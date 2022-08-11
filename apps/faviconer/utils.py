@@ -1,9 +1,16 @@
 import json
+import hashlib
 import os
 from io import BytesIO
 
 import requests
 from PIL import Image
+
+
+def generate_favicon_id(source_url, crop_points, size):
+    crop_points = json.dumps(crop_points)
+    meta_str = f"{source_url}-{crop_points}-{size}"
+    return hashlib.md5(meta_str.encode('utf-8')).hexdigest()
 
 
 class FaviconGenerator:
@@ -26,7 +33,7 @@ class FaviconGenerator:
             elif self.crop_points["bottom"] > height:
                 return False, f"Bottom crop point can't be greater than height: {height}"
             else:
-                return True
+                return True, ""
 
     def crop(self):
         width, height = self.image.size
@@ -49,7 +56,7 @@ class FaviconGenerator:
                     "right": width - split_gap,
                     "bottom": height
                 }
-
+        self.crop_points = crop_points
         self.cropped_image = self.image.crop((crop_points["left"], crop_points["top"],
                                               crop_points["right"], crop_points["bottom"]))
         return self.cropped_image

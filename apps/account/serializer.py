@@ -67,8 +67,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         user = User.objects.create(
             email = validated_data['email'],
             username = validated_data['username'],
-            first_name = validated_data['first_name'],
-            last_name = validated_data['last_name'],
+            name = validated_data['name'],
+            # last_name = validated_data['last_name'],
         )
         
         # pass the validated password
@@ -111,6 +111,28 @@ class LoginSerializer(serializers.Serializer):
             raise serializers.ValidationError(msg, code='authorization')
         data['user'] = user
         return data
+
+
+class UpdatedLoginSerializer(serializers.Serializer):
+    """ This is the serializer for logging in a user """
+    username = serializers.CharField(
+        label="Username",
+        write_only=True
+    )
+    password = serializers.CharField(
+        label="Password",
+        # This will be used when the DRF browsable API is enabled
+        style={'input_type': 'password'},
+        write_only=True
+    )
+
+    def validate(self, data):
+        # Take username and password from request
+        username = data.get('username')
+        password = data.get('password')
+        user = models.UserProfile.objects.filter(username=username).first()
+        if user.check_password(password):
+            return data
 
 class UserProfileSerializer(serializers.ModelSerializer):
     """serializer for user profile objects"""
