@@ -88,7 +88,7 @@ body {
     padding: 10px;
 }
 .overflow {
-    overflow-y: auto ;
+    overflow-y: scroll ;
 }
 .h-gen-favicon {
     height: 270px;
@@ -159,7 +159,14 @@ a:hover {
     .menus{
         display: none;
     }
-    /* .sm-f-col {
+    .h-gen-favicon {
+        height: 396px;
+    }
+    .sm-f-col {
         flex-direction: column;
-    } */
+    }
+    .w-gen-code {
+        width: 100%;
+        padding: 10px;
+    }
 }
