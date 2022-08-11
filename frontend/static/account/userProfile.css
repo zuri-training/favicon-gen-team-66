@@ -165,6 +165,9 @@ a:hover {
     .sm-f-col {
         flex-direction: column;
     }
+    .justify-between{
+        justify-content: unset;
+    }
     .w-gen-code {
         width: 100%;
         padding: 10px;
