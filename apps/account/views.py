@@ -1,32 +1,26 @@
-from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
+from rest_framework.permissions import AllowAny
 from rest_framework.authentication import TokenAuthentication
-from django.contrib.auth import get_user_model
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import status, viewsets, filters
+from rest_framework.generics import (
+    CreateAPIView,
+    RetrieveUpdateDestroyAPIView,
+    UpdateAPIView
+    )
+from django.contrib.auth import logout
 from django.conf import settings
-from . import models
+
+from .permissions import UpdateOwnProfile
 from .serializer import (
-    UserSerializer, 
     RegisterSerializer,
     UserProfileSerializer,
     UpdatedLoginSerializer,
     ResetPasswordSerializer,
     UpdateUserSerializer
     )
-from .permissions import (
-    IsCreatorOrAdmin,
-    UpdateOwnProfile,
-)
-from rest_framework.generics import (
-    CreateAPIView, 
-    ListAPIView, 
-    RetrieveAPIView,
-    RetrieveUpdateDestroyAPIView,
-    UpdateAPIView,
-    RetrieveUpdateAPIView
-    )
-from rest_framework.response import Response
-from django.contrib.auth import login, logout
-from rest_framework.views import APIView
-from rest_framework import status, viewsets, filters
+from . import models
+
 
 User = settings.AUTH_USER_MODEL
 
@@ -45,7 +39,7 @@ class LoginView(APIView):
         serializer = self.serializer_class(
             data=self.request.data,
             context={ 'request': self.request }
-            )
+        )
         serializer.is_valid(raise_exception=True)
         return Response(None, status=status.HTTP_202_ACCEPTED)
 
@@ -75,8 +69,8 @@ class UserProfileViewSet(viewsets.ModelViewSet):
         'username',
         'name',
         'email'
-        )
-
+    )
+    
 class ResetPasswordView(UpdateAPIView):
     """ change the user password """
     queryset = models.UserProfile.objects.all()
