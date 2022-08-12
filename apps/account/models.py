@@ -1,10 +1,10 @@
-import uuid
-
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.utils.http import int_to_base36
+# Create your models here.
 
+#base model
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, null=True)
@@ -16,6 +16,8 @@ class Profile(models.Model):
     def __unicode__ (self) -> any:
         return self.name
 
+
+#userprofilemanager
 class UserProfileManager(BaseUserManager):
     """helps django work with our docstring"""
     def create_user(self, email, name, password):
@@ -44,7 +46,11 @@ class UserProfileManager(BaseUserManager):
 #expanded model
 class UserProfile(AbstractBaseUser, PermissionsMixin):
     """represents a user profile in our database"""
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL, 
+        null=True, 
+        on_delete=models.CASCADE
+        )
     username = models.CharField(max_length=100, null=True)
     name=models.CharField(max_length=100, null=True)
     title = models.CharField(max_length=50, blank=True)
@@ -70,4 +76,4 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         """to convert the object to a string"""  
         return self.email
-    
+    #returning a field unique to the user

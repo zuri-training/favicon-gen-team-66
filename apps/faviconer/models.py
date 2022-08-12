@@ -2,6 +2,7 @@ from django.db import models
 
 from apps.account.models import UserProfile
 
+
 class Favicon(models.Model):
     id = models.CharField(primary_key=True, max_length=500)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)

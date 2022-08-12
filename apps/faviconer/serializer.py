@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from .utils import FaviconGenerator, ImageUtil, generate_favicon_id
 from apps.account import models
 from .models import Favicon as FaviconModel

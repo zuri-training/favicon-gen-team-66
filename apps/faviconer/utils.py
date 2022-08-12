@@ -2,6 +2,7 @@ import json
 import hashlib
 import os
 from io import BytesIO
+
 import requests
 from PIL import Image
 
