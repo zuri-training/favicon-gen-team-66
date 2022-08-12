@@ -39,8 +39,6 @@ DEBUG = config("DEBUG", default=True, cast=bool)
 #     default='django-insecure-b5e=4+-nkh(ox^otzk)71+zbb!x6ovp8fca&opjdx&e*8t%p(_'
 #     )
 
-# # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = config("DEBUG", default=True, cast=bool)
 
 ALLOWED_HOSTS = ["*"]
 
@@ -153,7 +151,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR/'frontend/static/'
     ]
-
+MEDIA_ROOT = [
+    BASE_DIR/'frontend/templates/account/images/'
+    ]
+ 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

@@ -1,10 +1,9 @@
-from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
+from rest_framework.permissions import AllowAny
 from rest_framework.authentication import TokenAuthentication
-from django.contrib.auth import get_user_model
+# from django.contrib.auth import get_user_model
 from django.conf import settings
 from . import models
 from .serializer import (
-    UserSerializer, 
     RegisterSerializer,
     UserProfileSerializer,
     UpdatedLoginSerializer,
@@ -12,16 +11,12 @@ from .serializer import (
     UpdateUserSerializer
     )
 from .permissions import (
-    IsCreatorOrAdmin,
     UpdateOwnProfile,
 )
 from rest_framework.generics import (
-    CreateAPIView, 
-    ListAPIView, 
-    RetrieveAPIView,
+    CreateAPIView,
     RetrieveUpdateDestroyAPIView,
-    UpdateAPIView,
-    RetrieveUpdateAPIView
+    UpdateAPIView
     )
 from rest_framework.response import Response
 from django.contrib.auth import login, logout
