@@ -7,7 +7,8 @@ from .serializer import (
     UserSerializer, 
     RegisterSerializer,
     LoginSerializer,
-    UserProfileSerializer
+    UserProfileSerializer,
+    UpdatedLoginSerializer
     )
 from .permissions import (
     IsCreatorOrAdmin,
@@ -17,7 +18,8 @@ from rest_framework.generics import (
     CreateAPIView, 
     ListAPIView, 
     RetrieveAPIView,
-    UpdateAPIView
+    UpdateAPIView,
+    RetrieveUpdateDestroyAPIView
     )
 from rest_framework.response import Response
 from django.contrib.auth import login, logout
@@ -35,16 +37,14 @@ class RegisterUserAPIView(CreateAPIView):
 class LoginView(APIView):
     """ view for user login """
     permission_classes = [AllowAny]
-    serializer_class = LoginSerializer
+    serializer_class = UpdatedLoginSerializer
 
     def post(self, request):
-        serializer = LoginSerializer(
-            data=self.request.data, 
+        serializer = self.serializer_class(
+            data=self.request.data,
             context={ 'request': self.request }
             )
         serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data['user']
-        login(request, user)
         return Response(None, status=status.HTTP_202_ACCEPTED)
 
 class LogoutView(APIView):
@@ -53,23 +53,39 @@ class LogoutView(APIView):
         logout(request)
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
-class ProfileView(RetrieveAPIView):
-    """ view for the user profile """
-    serializer_class = UserSerializer
-    permission_classes = [IsCreatorOrAdmin]
+# class ProfileView(RetrieveAPIView):
+#     """ view for the user profile """
+    # serializer_class = UserProfileSerializer
+    # permission_classes = [UpdateOwnProfile]
+
+    # def get_object(self):
+    #     return self.request.user
+    
+class UserProfileView(RetrieveUpdateDestroyAPIView):
+    """ View to update user profile """
+
+    serializer_class = UserProfileSerializer
+    permission_classes = [UpdateOwnProfile]
+    # queryset = User.objects.all()
 
     def get_object(self):
         return self.request.user
-    
-class UserList(ListAPIView):
-    """ Admin View to list of all users """
-    User=models.UserProfile
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    queryset = User.objects.all().order_by('date_created')
-    permission_classes = [IsAdminUser]
 
-   
+    def partial_update(self, request, pk=None):
+        # data = {'sold':True, 'forSale':False}
+        serializer = UserProfileSerializer(
+            context = {'request': request},
+            partial=True
+            )
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    # # queryset = User.objects.all()
+    # permission_classes = [IsAuthenticated]
+    # # permission_classes = [IsCreatorOrAdmin]
+    # serializer_class = UpdateUserSerializer
+    
 class UserProfileViewSet(viewsets.ModelViewSet):
     """handles all CRUD operation on Profiles"""
     

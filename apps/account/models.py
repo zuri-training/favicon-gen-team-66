@@ -1,12 +1,10 @@
-from ast import BinOp
-from tkinter import CASCADE
+import uuid
+
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+from django.utils.http import int_to_base36
 
-# Create your models here.
-
-#base model
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, null=True)
@@ -18,8 +16,6 @@ class Profile(models.Model):
     def __unicode__ (self) -> any:
         return self.name
 
-
-#userprofilemanager
 class UserProfileManager(BaseUserManager):
     """helps django work with our docstring"""
     def create_user(self, email, name, password):
@@ -74,6 +70,4 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         """to convert the object to a string"""  
         return self.email
-    #returning a field unique to the user
-
-
+    
