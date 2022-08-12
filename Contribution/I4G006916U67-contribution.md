@@ -53,3 +53,5 @@ Used Django Rest Framework to create the following APIs for:
 [View and Endpoint changes](https://github.com/zuri-training/favicon-gen-team-66/pull/122)
 - Modifications to views.py using django rest framework generics
 
+[updated user profile](https://github.com/zuri-training/favicon-gen-team-66/pull/125)
+- updated user profile to include the profile image
