@@ -35,8 +35,9 @@
   </head>
   <body onload="checkEdits()">
     <div class="wrapper  absolute">
+
       <header class="top-nav-bar items-center flex justify-between sticky header">
-        <div><img class="m-top" src="../account/images/logo.png" alt="logo"></div>
+        <div><img class="m-top pointer" src="../account/images/logo.png" alt="logo"></div>
         <div class="flex justify-center">
           <nav class="flex">
             <ul class="flex nav-items">
@@ -45,98 +46,57 @@
               <li><a href="#" target="_blank" rel="noopener noreferrer">Tutorial</a></li>
             </ul>
           </nav>
-
-          <!-- <nav class="flex mobile">
-            <ul id="menus" class="flex f-col mobile-nav-items">
-              <li><a href="#" target="_blank" rel="noopener noreferrer">Favicons</a></li>
-              <li><a href="#" target="_blank" rel="noopener noreferrer">Contact us</a></li>
-              <li><a href="#" target="_blank" rel="noopener noreferrer">Tutorial</a></li>
-              <li>Change Password</li>
-              <li>Sign Out</li>
-            </ul>
-            <a 
-              href="javascript:void(0);" 
-              class="menu-icon"
-              onclick="handleShowMenu()"
-            >
-              <img onclick="changeMenuIcon(this)" class="menu-icon" src="../account/images/menu-icon.svg" alt="menu icon">
-            </a>
-          </nav> -->
         </div>
-        <button class="btn-log-out rounded">Log out</button>
-          <a 
-            href="javascript:void(0);" 
-            class="menu-icon"
-            onclick="handleShowMenu()"
-          >
-            <img onclick="changeMenuIcon(this)" class="menu-icon" src="../account/images/menu-icon.svg" alt="menu icon">
-          </a>
+        <div>
+          <button class="btn-log-out pointer rounded">Log out</button>  
+          <img id="myBtn" class="menu-icon" src="../account/images/menu-icon.svg" alt="menu icon">
+        </div>
+        
       </header>
-
-      <!-- <header>
-        <div class="home-active-state-header">
-          <div class="home-active-state-frame199">
-            <div class="home-active-state-frame196">
-              <span class="home-active-state-text87 bodyRegular4">
-                <span><a href="#">Favicons</a></span>
-              </span>
-            </div>
-            <div class="home-active-state-frame197">
-              <span class="home-active-state-text89 bodyRegular4">
-                <span><a href="#">Contact us</a></span>
-              </span>
-            </div>
-            <div class="home-active-state-frame198">
-              <span class="home-active-state-text91 bodyRegular4">
-                <span><a href="#">Tutorial</a></span>
-              </span>
-            </div>
       
-        </div>
-        <a href="#"><img
-          src="images/fav.png"
-          alt="Logo"
-          class="home-active-state-project-team66favicon-generatorremovebgpreview"
-        /></a>
-        <div class="home-active-state-frame215">
-          <a href="#"><span class="home-active-state-text93"><span>Signup</span></span>
-          </a>
-        </div>
-        <div class="home-active-state-frame216">
-          <a href="#"><span class="home-active-state-text93"><span>Signin</span></span>
-          </a>
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p class="pointer"><a href=""> Overview</a></p>
+          <p class="pointer" onclick="setEditMode()">Edit Username</p>
+          <p class="pointer"><a href="#">Log Out</a></p>
         </div>
       </div>
-    </div>
-      </header>
-       -->
+      
       <main>
         <div class="grid">
           <nav class="side-bar bg-side-bar">
             <ul class="ul">
               <li class="nav-items">
-                <div class="flex nav-gap">
-                  <img src="images/overview.svg" alt="overview">
-                  <span><b>Overview</b></span>
-                </div>
+                <a href="#">
+                  <div class="flex nav-gap pointer">
+                    <img src="images/overview.svg" alt="overview">
+                    <span><b>Overview</b></span>
+                  </div>
+                </a>
               </li>
               <li>
-                <div onclick="setEditMode()" class="flex nav-gap">
-                  <img src="images/edit.svg" alt="Edit profile">
-                  <span>Edit Profile</span>
-                </div>
+                <a href="#">
+                  <div onclick="setEditMode()" class="flex nav-gap pointer">
+                    <img src="images/edit.svg" alt="Edit profile">
+                    <span>Edit Profile</span>
+                  </div>
+                </a>
               </li>
               <li>
-                <div class="flex nav-gap">
-                  <img src="images/logout.svg" alt="log out">
-                  <span>Sign Out</span>
-                </div>
+                <a href="">
+                  <div class="flex nav-gap">
+                      <img src="images/logout.svg" alt="log out">
+                      <span>Sign Out</span>
+                  </div>
+                </a>
               </li>
             </ul>
           </nav>
           <div class="container user-bg p-user">
             <section class="my-section">
-              <h1 class="p-bottom">User Profile</h1>
+              <h1 class="p-bottom text-center">User Profile</h1>
               <div class="flex items-center gap-user user-about">
                 <figure class="user-image-box">
                   <img class="user-image object-contain" src="images/Ellipse 2.png" alt="user-image" />
@@ -246,8 +206,8 @@
                       </div>
                     </code>
                   </div>
-                  <button onclick="copyCode1()" class="btn-copy-code">
-                    <img src="images/copy-code.svg">
+                  <button onclick="copyCode1()" class="btn-copy-code pointer">
+                    <img src="images/copy-code.svg" id="">
                   </button>
                 </div> 
                 <div class="w-gen-code">
@@ -264,7 +224,7 @@
                     </div>
                   </code>
                   </div>
-                  <button onclick="copyCode2()" class="btn-copy-code">
+                  <button onclick="copyCode2()" class="btn-copy-code pointer">
                     <img src="images/copy-code.svg">
                   </button>
                 </div>
@@ -326,19 +286,7 @@
         </div>
       </footer>
 
-     
     </div>
-
-    <!-- <script>
-      function handleShowMenu() {
-        var x = document.getElementById("menus");
-        if(x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
-        }
-      } 
-    </script> -->
     
     <script>
       function copyCode1() {
@@ -360,6 +308,33 @@
         navigator.clipboard.writeText(getCode);
        
         alert ("Code2 copied");
+      }
+    </script>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
       }
     </script>
   </body>

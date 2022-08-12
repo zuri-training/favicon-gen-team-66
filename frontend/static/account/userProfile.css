@@ -6,160 +6,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    background: #B6CDF7;
 }
-
-/********* header css  start here *******/
-
-/* .home-active-state-header {
-    top: 0px;
-    left: 16px;
-    width: 1424px;
-    height: 72px;
-    display: flex;
-    padding: 0;
-    position: absolute;
-    align-self: auto;
-    box-sizing: border-box;
-    align-items: flex-start;
-    flex-shrink: 1;
-    border-color: transparent;
-    border-style: none;
-    border-width: 0;
-    border-radius: 0px 0px 0px 0px;
-    flex-direction: row;
-    justify-content: flex-start;
-    background-color: rgba(255, 255, 255, 1);
-  }
-  .home-active-state-frame199 {
-    top: 21px;
-    left: 571.5777587890625px;
-    width: 421.7611083984375px;
-    display: flex;
-    position: absolute;
-    box-sizing: border-box;
-    align-items: flex-start;
-    flex-shrink: 0;
-    border-color: transparent;
-    border-radius: 0px 0px 0px 0px;
-  }
-  .home-active-state-frame196 {
-    margin: 0 40 0 0;
-    display: flex;
-    padding: 4px 16px;
-    position: relative;
-    box-sizing: border-box;
-    align-items: center;
-    border-color: transparent;
-    border-radius: 8px;
-  }
-  .home-active-state-text87 {
-    color: var(--dl-color-black-11);
-    height: auto;
-    margin: 0 0 0 0;
-    align-self: auto;
-    text-align: left;
-    line-height: 22px;
-  }
-  .home-active-state-frame197 {
-    margin: 0 40 0 0;
-    display: flex;
-    padding: 4px 16px;
-    position: relative;
-    box-sizing: border-box;
-    align-items: center;
-    border-color: transparent;
-    border-radius: 8px;
-  }
-  .home-active-state-text89 {
-    color: var(--dl-color-black-11);
-    height: auto;
-    margin: 0 0 0 0;
-    align-self: auto;
-    text-align: left;
-    line-height: 22px;
-  }
-  .home-active-state-frame198 {
-    display: flex;
-    padding: 4px 16px;
-    position: relative;
-    box-sizing: border-box;
-    align-items: center;
-    border-color: transparent;
-    border-radius: 8px;
-  }
-  .home-active-state-text91 {
-    color: var(--dl-color-black-11);
-    height: auto;
-    margin: 0 0 0 0;
-    align-self: auto;
-    text-align: left;
-    line-height: 22px;
-  }
-  .home-active-state-project-team66favicon-generatorremovebgpreview {
-    top: -9px;
-    left: 86px;
-    width: 236px;
-    height: 90px;
-    margin: 0 0 0 0;
-    position: absolute;
-    box-sizing: border-box;
-    border-color: transparent;
-  }
-  .home-active-state-frame215 {
-    top: 17px;
-    left: 1102.27px;
-    width: 84px;
-    display: flex;
-    padding: 10px 12px;
-    position: absolute;
-    box-sizing: border-box;
-    align-items: center;
-    flex-shrink: 0;
-    border-color: rgba(158, 156, 156, 1);
-    background-color: transparent;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 8px;
-    justify-content: center;
-  }
-  .home-active-state-frame216 {
-    width: 84px;
-  left: 1237.28px;
-  top: 17px;
-    display: flex;
-    padding: 10px 12px;
-    position: absolute;
-    box-sizing: border-box;
-    align-items: center;
-    flex-shrink: 0;
-    border-color: rgba(158, 156, 156, 1);
-    background-color: #FD568A;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 8px;
-    justify-content: center;
-  }
-  .home-active-state-text93 {
-    color: #9f9d9d;
-    height: auto;
-    margin: 0 0 0 0;
-    font-size: 16px;
-    align-self: auto;
-    font-style: SemiBold;
-    text-align: center;
-    font-family: Poppins;
-    font-weight: 600;
-    line-height: 114.99999761581421%;
-    font-stretch: normal;
-    text-decoration: none;}
-
-    a{
-        text-decoration: none;
-    }
- */
-    /* header css ends here */
-
-/* Header section  start*/
 
 .header {
     top: 0;
@@ -204,7 +52,7 @@ body {
     gap: 5px;
 }
 .user-bg {
-    background-color: #EADFDF;
+    /* background-color: #EADFDF; */
 }
 .p-user {
     padding: 20px 60px 20px 20px;
@@ -268,6 +116,9 @@ body {
     display: inline;
 }
 
+.ul {
+    margin-top: 60px;
+}
 ul > li {
     margin: 30px 5px;
     padding: 10px 0;
@@ -282,6 +133,7 @@ a:hover {
 }
 .menu-icon {
     visibility: hidden;
+    float: right;
 }
 .mobile-nav-items {
     display: none;
@@ -289,6 +141,7 @@ a:hover {
 .header {
     width: 100vw;
     height: 76px;
+    
 }
 .btn-copy-code { 
     border: none;
@@ -311,7 +164,7 @@ a:hover {
 
 .footer {
     /* position: fixed; */
-    bottom: 0px;
+    bottom: 0;
     width: 100vw;
     /* height: 424px; */
     background-color: #3d4452;
@@ -339,10 +192,57 @@ a:hover {
     padding-left: 10px;
 }
 
+pointer {
+    cursor: pointer;
+}
+
+/* for modal of mobile screen */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    /* z-index: 1; Sit on top */
+    padding-top: 5px; /* Location of the box */
+    right: 0;
+    top: 0;
+    width: 230px; /* Full width */
+    height: 300px; /* Full height */  
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    box-shadow: 0px 1.94074px 14.5555px rgba(0, 0, 0, 0.25);
+    width: 215px;
+    border-top-right-radius: 10px;
+    font-size: 12px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: red;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+/* modal ends here */
+
+
 @media (max-width:900px) {
     .footer .grid{
         display: grid;
         grid-template-columns: 1fr 1fr;
+
     }
     .footer #flex-end {
         padding-left: 0;
@@ -353,12 +253,18 @@ a:hover {
 }
 
 @media (max-width: 600px) {
+    .header {
+        background-color: #B6CDF7;
+        padding: 10px;
+        border-bottom: unset;
+        box-shadow: unset;
+    }
     .nav-items, .btn-log-out {
         display: none;
     }
     .menu-icon {
         visibility: visible;
-        float: right;
+        align-items: ;
     }
     .mobile-nav-items {
         visibility: visible;
@@ -379,12 +285,22 @@ a:hover {
     .sm-f-col {
         flex-direction: column;
     }
-    .justify-between{
+    .justify-unset{
         justify-content: unset;
     }
     .w-gen-code {
         width: 100%;
         padding: 10px;
+    }
+    .text-center{
+        text-align: center;
+    }
+    .footer {
+        font-size: 16px;
+    }
+    .footer {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
