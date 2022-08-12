@@ -6,8 +6,8 @@ from . import models
 from .serializer import (
     UserSerializer, 
     RegisterSerializer,
-    LoginSerializer,
-    UserProfileSerializer
+    UserProfileSerializer,
+    UpdatedLoginSerializer
     )
 from .permissions import (
     IsCreatorOrAdmin,
@@ -16,8 +16,7 @@ from .permissions import (
 from rest_framework.generics import (
     CreateAPIView, 
     ListAPIView, 
-    RetrieveAPIView,
-    UpdateAPIView
+    RetrieveAPIView
     )
 from rest_framework.response import Response
 from django.contrib.auth import login, logout
@@ -35,16 +34,14 @@ class RegisterUserAPIView(CreateAPIView):
 class LoginView(APIView):
     """ view for user login """
     permission_classes = [AllowAny]
-    serializer_class = LoginSerializer
+    serializer_class = UpdatedLoginSerializer
 
     def post(self, request):
-        serializer = LoginSerializer(
-            data=self.request.data, 
+        serializer = self.serializer_class(
+            data=self.request.data,
             context={ 'request': self.request }
             )
         serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data['user']
-        login(request, user)
         return Response(None, status=status.HTTP_202_ACCEPTED)
 
 class LogoutView(APIView):
@@ -78,5 +75,9 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     authentication_classes=(TokenAuthentication,)
     permission_classes=(UpdateOwnProfile,)
     filter_backends=(filters.SearchFilter,)
-    search_fields=('username','name','email',)
+    search_fields=(
+        'username',
+        'name',
+        'email'
+        )
     
