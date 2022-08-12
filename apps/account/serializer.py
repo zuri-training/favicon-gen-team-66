@@ -1,10 +1,9 @@
 from rest_framework import serializers
-from django.contrib.auth import get_user_model
-from django.contrib.auth.password_validation import validate_password
 from rest_framework.validators import UniqueValidator
+from django.contrib.auth.password_validation import validate_password
+from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate
 from . import models
-from django.conf import settings
 
 
 User = get_user_model()
@@ -117,7 +116,6 @@ class UpdatedLoginSerializer(serializers.Serializer):
     )
     password = serializers.CharField(
         label = "Password",
-        # This will be used when the DRF browsable API is enabled
         style = {'input_type': 'password'},
         write_only = True
     )
@@ -139,7 +137,8 @@ class UserProfileSerializer(serializers.ModelSerializer):
             'email', 
             'password', 
             'name', 
-            'title', 
+            'title',
+            'profile_pic',
             'username', 
             'is_active'
             ]
@@ -172,7 +171,11 @@ class ResetPasswordSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = User
-        fields = ('old_password', 'password', 'password2')
+        fields = [
+            'old_password', 
+            'password', 
+            'password2'
+        ]
 
     def validate(self, data):
         if data['password'] != data['password2']:
@@ -202,7 +205,13 @@ class UpdateUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'name', 'title', 'email')
+        fields = [
+            'username', 
+            'name', 
+            'title', 
+            'email',
+            'profile_pic'
+        ]
         extra_kwargs = {
             'name': {'required': True},
         }
@@ -229,6 +238,7 @@ class UpdateUserSerializer(serializers.ModelSerializer):
         instance.email = validated_data['email']
         instance.title = validated_data['title']
         instance.username = validated_data['username']
+        instance.profile_pic = validated_data['profile_pic']
 
         instance.save()
 

@@ -44,3 +44,12 @@ Used Django Rest Framework to create the following APIs for:
 - Logout user
 - User profile
 - User list for admin
+
+
+[Updated Endpoints](https://github.com/zuri-training/favicon-gen-team-66/pull/117)
+- Updated login API
+- Linked favicon to user
+
+[View and Endpoint changes](https://github.com/zuri-training/favicon-gen-team-66/pull/122)
+- Modifications to views.py using django rest framework generics
+
