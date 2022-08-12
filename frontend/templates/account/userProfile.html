@@ -25,7 +25,7 @@
         var userVersion= editElem.innerHTML;
         localStorage.userEdits = userVersion;
       }
-      
+
       function checkEdits() {
         if(localStorage.userEdits!=null)
         document.getElementById("edit").innerHTML = localStorage.userEdits;
@@ -35,8 +35,8 @@
   </head>
   <body onload="checkEdits()">
     <div class="wrapper  absolute">
-      <header class="top-nav-bar items-center flex justify-between " style="top:0; background: grey; position: sticky;">
-        <div class=""><img src="../account/images/logo.png" alt="logo"></div>
+      <header class="top-nav-bar items-center flex justify-between sticky header">
+        <div><img class="m-top" src="../account/images/logo.png" alt="logo"></div>
         <div class="flex justify-center">
           <nav class="flex">
             <ul class="flex nav-items">
@@ -46,7 +46,7 @@
             </ul>
           </nav>
 
-          <nav class="flex mobile">
+          <!-- <nav class="flex mobile">
             <ul id="menus" class="flex f-col mobile-nav-items">
               <li><a href="#" target="_blank" rel="noopener noreferrer">Favicons</a></li>
               <li><a href="#" target="_blank" rel="noopener noreferrer">Contact us</a></li>
@@ -61,11 +61,55 @@
             >
               <img onclick="changeMenuIcon(this)" class="menu-icon" src="../account/images/menu-icon.svg" alt="menu icon">
             </a>
-          </nav>
+          </nav> -->
         </div>
-        <button style="padding:10px; border: 2px #9E9C9C; ;">Log out</button>
+        <button class="btn-log-out rounded">Log out</button>
+          <a 
+            href="javascript:void(0);" 
+            class="menu-icon"
+            onclick="handleShowMenu()"
+          >
+            <img onclick="changeMenuIcon(this)" class="menu-icon" src="../account/images/menu-icon.svg" alt="menu icon">
+          </a>
       </header>
 
+      <!-- <header>
+        <div class="home-active-state-header">
+          <div class="home-active-state-frame199">
+            <div class="home-active-state-frame196">
+              <span class="home-active-state-text87 bodyRegular4">
+                <span><a href="#">Favicons</a></span>
+              </span>
+            </div>
+            <div class="home-active-state-frame197">
+              <span class="home-active-state-text89 bodyRegular4">
+                <span><a href="#">Contact us</a></span>
+              </span>
+            </div>
+            <div class="home-active-state-frame198">
+              <span class="home-active-state-text91 bodyRegular4">
+                <span><a href="#">Tutorial</a></span>
+              </span>
+            </div>
+      
+        </div>
+        <a href="#"><img
+          src="images/fav.png"
+          alt="Logo"
+          class="home-active-state-project-team66favicon-generatorremovebgpreview"
+        /></a>
+        <div class="home-active-state-frame215">
+          <a href="#"><span class="home-active-state-text93"><span>Signup</span></span>
+          </a>
+        </div>
+        <div class="home-active-state-frame216">
+          <a href="#"><span class="home-active-state-text93"><span>Signin</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+      </header>
+       -->
       <main>
         <div class="grid">
           <nav class="side-bar bg-side-bar">
@@ -230,20 +274,62 @@
           
         </div>
       </main>
-      <!-- <footer
-        style="
-          height: 60px;
-          background: blue;
-          position: sticky;
-          bottom: 0;
-          width: 100vw;
-        "
-      >
-        Footer
-      </footer> -->
+
+      <footer class="footer">
+        <div class="grid grid-col">
+          <div class="col f-weight">
+            <div><strong><a href="#">About</a></strong></div>
+            <div><a href="#">What we do</a></div>
+            <div><a href="#">How we roll</a></div>
+            <div><a href="#">Where we are</a></div>
+          </div>
+          <div class="col f-weight">
+            <div><strong><a href="#">Support</a></strong></div>
+            <div><a href="#">Documentation</a></div>
+            <div><a href="#">Feature</a></div>
+            <div><a href="#">Feedback</a></div>
+          </div>
+          <div class="col pad-top">
+            <div class="pad-top-res"><strong><a href="#">Resources</a></strong></div>
+            <div><a href="#">What are favicons</a></div>
+            <div><a href="#">How to generate favicons</a></div>
+            <div><a href="#">Icons gallery</a></div>
+            <div><a href="#">Favicons formats</a></div>
+          </div>
+          <div class="col f-weight pad-top" id="flex-end">
+            <div><strong><a href="#">Contact us</a></strong></div>
+            <div>
+              <a href="#">
+                <img src="../account/images/twitter.svg" alt="twitter">
+                <span>Twiter</span>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src="../account/images/facebook.svg" alt="facebook">
+                <span>Facebook</span>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src="../account/images/github.svg" alt="github">
+                <span>Github</span>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src="../account/images/slack.svg" alt="slack">
+                <span>Slack</span>
+              </a>
+            </div>
+           </div> 
+        </div>
+      </footer>
+
+     
     </div>
 
-    <script>
+    <!-- <script>
       function handleShowMenu() {
         var x = document.getElementById("menus");
         if(x.style.display === "block") {
@@ -252,7 +338,8 @@
           x.style.display = "block";
         }
       } 
-    </script>
+    </script> -->
+    
     <script>
       function copyCode1() {
         
