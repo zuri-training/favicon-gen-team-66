@@ -3,12 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Poppins', sans-serif;
+    background: #B6CDF7;
 }
-.wrapper {
 
+.header {
+    top: 0;
+    background: #FFFFFF;
+    border-bottom: 0.5px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px;
 }
+
+    /* ******* Main Start here */
 .top-nav-bar {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -43,16 +52,11 @@ body {
     gap: 5px;
 }
 .user-bg {
-    background-color: #EADFDF;
+    /* background-color: #EADFDF; */
 }
 .p-user {
     padding: 20px 60px 20px 20px;
 }
-/* .w-user-image-box {
-    height: 100px;
-    width: 100px;
-} */
-
 .object-contain {
     object-fit: contain;
 }
@@ -64,7 +68,6 @@ body {
 .user-image-box {
     max-width: 150px;
     height: 150px;
-    /* align-items: center; */
 }
 .items-center {
     align-items: center;
@@ -94,13 +97,14 @@ body {
     padding: 10px;
 }
 .overflow {
-    overflow-y: auto ;
+    overflow-y: scroll ;
 }
 .h-gen-favicon {
     height: 270px;
 }
 .w-gen-code {
-    width: 45%
+    width: 45%;
+    padding: 5px 10px ;
 }
 .justify-between {
     justify-content: space-between;
@@ -111,10 +115,10 @@ body {
 .d-inline {
     display: inline;
 }
-/* .float-right {
-    float: right;
-} */
 
+.ul {
+    margin-top: 60px;
+}
 ul > li {
     margin: 30px 5px;
     padding: 10px 0;
@@ -129,20 +133,138 @@ a:hover {
 }
 .menu-icon {
     visibility: hidden;
+    float: right;
 }
 .mobile-nav-items {
     display: none;
 }
 .header {
     width: 100vw;
+    height: 76px;
+    
+}
+.btn-copy-code { 
+    border: none;
+    background-color: #FCFCFC;
+    float: right;
+    /* margin: 10px; */
+}
+.btn-log-out {
+    border: solid 2px #9f9d9d;
+    padding: 10px;
+    color: #9f9d9d;
+    font-size: 16px;
+    background-color: #FFFFFF;
+}
+.rounded {
+    border-radius: 10px;
 }
 
-@media (max-width: 425px) {
-    .nav-items {
+/* Footer starts here */
+
+.footer {
+    /* position: fixed; */
+    bottom: 0;
+    width: 100vw;
+    /* height: 424px; */
+    background-color: #3d4452;
+    color: #FFFFFF;
+    padding: 80px;
+}
+.footer .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+.footer #flex-end{
+   padding-left: 80px;
+}
+.footer a{
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.footer span {
+    padding-left: 10px;
+}
+
+pointer {
+    cursor: pointer;
+}
+
+/* for modal of mobile screen */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    /* z-index: 1; Sit on top */
+    padding-top: 5px; /* Location of the box */
+    right: 0;
+    top: 0;
+    width: 230px; /* Full width */
+    height: 300px; /* Full height */  
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    box-shadow: 0px 1.94074px 14.5555px rgba(0, 0, 0, 0.25);
+    width: 215px;
+    border-top-right-radius: 10px;
+    font-size: 12px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: red;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+/* modal ends here */
+
+
+@media (max-width:900px) {
+    .footer .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+    .footer #flex-end {
+        padding-left: 0;
+     }
+    .pad-top {
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        background-color: #B6CDF7;
+        padding: 10px;
+        border-bottom: unset;
+        box-shadow: unset;
+    }
+    .nav-items, .btn-log-out {
         display: none;
     }
     .menu-icon {
         visibility: visible;
+        align-items: ;
     }
     .mobile-nav-items {
         visibility: visible;
@@ -154,7 +276,36 @@ a:hover {
     .grid {
         grid-template-columns: none;
     }
-    /* .sm-f-col {
+    .menus{
+        display: none;
+    }
+    .h-gen-favicon {
+        height: 396px;
+    }
+    .sm-f-col {
         flex-direction: column;
-    } */
+    }
+    .justify-unset{
+        justify-content: unset;
+    }
+    .w-gen-code {
+        width: 100%;
+        padding: 10px;
+    }
+    .text-center{
+        text-align: center;
+    }
+    .footer {
+        font-size: 16px;
+    }
+    .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
+
+/* ******End of main css */
+
+/* ***** Start of footer css  */
+/* 
+/* ****** End of footer css */
