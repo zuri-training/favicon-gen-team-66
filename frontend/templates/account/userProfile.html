@@ -13,8 +13,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../static/account/userProfile.css" />
+
+    <script type="text/javascript">
+      function setEditMode() {        
+        var editElem = document.getElementById("edit");
+        editElem.focus().select();
+      }
+
+      function saveEdits() {
+        var editElem = document.getElementById("edit");
+        var userVersion= editElem.innerHTML;
+        localStorage.userEdits = userVersion;
+      }
+      
+      function checkEdits() {
+        if(localStorage.userEdits!=null)
+        document.getElementById("edit").innerHTML = localStorage.userEdits;
+      }
+      
+    </script>
   </head>
-  <body>
+  <body onload="checkEdits()">
     <div class="wrapper  absolute">
       <header class="top-nav-bar items-center flex justify-between " style="top:0; background: grey; position: sticky;">
         <div class=""><img src="../account/images/logo.png" alt="logo"></div>
@@ -58,7 +77,7 @@
                 </div>
               </li>
               <li>
-                <div class="flex nav-gap">
+                <div onclick="setEditMode()" class="flex nav-gap">
                   <img src="images/edit.svg" alt="Edit profile">
                   <span>Edit Profile</span>
                 </div>
@@ -80,7 +99,9 @@
                 </figure>
                 
                 <span>
-                    <p>John Doe</p>
+                    <p id="edit" contenteditable="true" onkeyup="saveEdits()">John Doe</p> 
+                    <input type="button" value="save edits" onclick="saveEdits()">
+                    <!-- <div id="update"> - Edit the text and click to save for next time</div> -->
                     <p>Frontend Developer</p>
                     <small>Joined<date> July, 2023</date></small>
                 </span>
@@ -172,11 +193,11 @@
                     <!-- The 'id' below should be dynamic -->
                     <code>
                       <div id="code1">
-                      &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt;
-                      &lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;
-                      &lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;
-                      &lt;link rel="manifest" href= "/site.webmanifest"&gt;
-                      &lt;meta name="msapplication-Til eColor" content="#da532c"&gt;
+                      &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt; <br>
+                      &lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt; <br>
+                      &lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt; <br>
+                      &lt;link rel="manifest" href= "/site.webmanifest"&gt; <br>
+                      &lt;meta name="msapplication-Til eColor" content="#da532c"&gt; <br>
                       &lt;meta name="theme-color" content="#ffffff"&gt;
                       </div>
                     </code>
@@ -190,11 +211,11 @@
                     <!-- Saved generated code -->
                     <code>
                       <div id="code2">
-                      &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt;
-                      &lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;
-                      &lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;
-                      &lt;link rel="manifest" href= "/site.webmanifest"&gt;
-                      &lt;meta name="msapplication-Til eColor" content="#da532c"&gt;
+                      &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt; <br> 
+                      &lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt; <br>
+                      &lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt; <br>
+                      &lt;link rel="manifest" href= "/site.webmanifest"&gt; <br>
+                      &lt;meta name="msapplication-Til eColor" content="#da532c"&gt; <br>
                       &lt;meta name="theme-color" content="#ffffff"&gt;
                     </div>
                   </code>
