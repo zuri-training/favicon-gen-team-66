@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="contact.css">
+    <script src="./contact.js"></script>
+    <link rel="stylesheet" href="./contact.css">
 </head>
 <body>
     <div class="container">
@@ -28,24 +29,24 @@
         </div>
         <div class="details">
          <h2>We will respond as quickly as possible</h2>
-         <form action="">
+         <form action="/cgi-bin/test.cgi" name="contact" onsubmit="return(validate());">
              <div class="formgroup">
                  <label for="email" >Email Address:</label><br>
-                 <input type="text" class="box"/>
+                 <input type="text" class="box" name="Email" required/>
              </div>
              <div class="formgroup">
                 <label for="subject">Subject:</label><br>
-                <input type="text" class="box" />
+                <input type="text" class="box" name="Subject" required/>
             </div>
             <div class="formgroup">
                 <label for="message">Why are you contacting us</label><br>
-                <textarea></textarea>
+                <textarea name="Textarea" required></textarea>
             </div>
             <div class="formgroup checker" >
-                <input type="checkbox" class="checkbox"/>
+                <input type="checkbox" class="checkbox" required/>
                 <label>By submiting this form, i agree that the information entered will be used for commercial pruposes resulting therefore</label>
             </div>
-            <button type="submit">Send Message</button>
+            <button type="submit" value="submit">Send Message</button>
                     <div class="gonedown">
             <p class="contact">Telephone No:<br>
             +234900000000<br>
