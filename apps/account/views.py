@@ -1,4 +1,3 @@
-# from django.contrib.auth import get_user_model
 from rest_framework.permissions import AllowAny
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.response import Response
@@ -9,8 +8,9 @@ from rest_framework.generics import (
     RetrieveUpdateDestroyAPIView,
     UpdateAPIView
     )
-from django.contrib.auth import login, logout
+from django.contrib.auth import logout
 from django.conf import settings
+
 from .permissions import UpdateOwnProfile
 from .serializer import (
     RegisterSerializer,
@@ -71,7 +71,6 @@ class UserProfileViewSet(viewsets.ModelViewSet):
         'email'
     )
     
-
 class ResetPasswordView(UpdateAPIView):
     """ change the user password """
     queryset = models.UserProfile.objects.all()
