@@ -36,12 +36,31 @@
       </div>
     </div>
   </header>
+  <!-- Drop down at mobile size screen -->
   <div class="mobileView">
     <img class="mobileLogo" src="Genzwhite.jpg" />
     <div class="mobileIcons" onclick="show()">
-      <i class="fa-regular fa-bars">menu</i>
+      <span id="menus">
+        <div class="menu"></div>
+        <div class="menu"></div>
+        <div class="menu"></div>
+      </span>
     </div>
   </div>
+
+  <!-- Side bar at mobile screen size -->
+  <div id="sidebar" class="sidebar">
+    <div onclick="vanish()" class="cancel">
+      <buttton><i class="fa-regular fa-xmark"></i>cancel</buttton>
+    </div>
+    <img src="Genzwhite.jpg" alt="" class="sideLogo" />
+    <div class="sideNavigator">
+      <div class="sideNav">Home</div>
+      <div class="sideNav">About</div>
+      <div class="sideNav">Services</div>
+    </div>
+  </div>
+
   <div class="mainDivs">
     <h1 class="headings">
       Generate <span style="color: #fd568a">Favicons</span> From
@@ -168,7 +187,7 @@
         <div id="iconDiv2">
           <p class="preview">Preview</p>
           <img src="quest.jpg" alt="" class="prevImage" /><br />
-          <div id="range2"><input type="range" /></div>
+          <div id="range2"><input type="range" min="0" max="9" value="0"></div>
           <div class="sliderlabel">
             <div class="slider1"><label for="slider">square</label></div>
             <div class="slider2"><label for="slider">circle</label></div>
@@ -217,6 +236,8 @@
       </div>
     </div>
   </footer>
+
+  <!-- HTML Modal -->
   <div class="modal" id="modal">
     <div id="htmlDiv">
       <div id="htmlDiv1">
@@ -231,17 +252,7 @@
     </div>
   </div>
 
-  <div id="sidebar" class="sidebar">
-    <div onclick="vanish()" class="cancel">
-      <i class="fa-regular fa-xmark">cancel</i>
-    </div>
-    <img src="Genzwhite.jpg" alt="" class="sideLogo" />
-    <div class="sideNavigator">
-      <div class="sideNav">Home</div>
-      <div class="sideNav">About</div>
-      <div class="sideNav">Services</div>
-    </div>
-  </div>
+  
   <script src="./favicon.js"></script>
 </body>
 

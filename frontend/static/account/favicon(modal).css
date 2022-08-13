@@ -1,66 +1,141 @@
-*{
+.dark-theme {
+    background: #282c35;
+    color: white;
+  }
+  
+  * {
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     max-width: 100%;
     min-height: auto;
-}
-
-/* Favicon modal page */
-
-/* The header part */
-
-/* The head part. */
-
-#headerdiva{
-    width: 100%;
+    transition: background 350ms;
+  }
+  
+  /* The head part. */
+  
+  #headerdiv {
     border-bottom: solid rgb(211, 210, 210) 2px;
     padding-bottom: 15px;
+    width: 100%;
     margin-bottom: 98px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-#headerdiv1a{
+  }
+  
+  #headerdiv1 {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     background-color: white;
     padding-left: 97px;
-}
-
-#genzimg1{
+  }
+  
+  #genzimg {
     flex: 0 0 236px;
     height: 72px;
     margin-right: 235.58px;
     justify-items: auto;
-}
-
-.navlink1{
+  }
+  
+  .navlink {
     margin: auto 72px auto 0;
     flex: 0 0 auto;
     height: fit-content;
-}
-
-#navlink1{
-    margin: auto 290.45px auto 0;
+    color: black;
+  }
+  
+  #navlink {
+    margin: auto 80px auto 0;
     flex: 0 0 auto;
     height: fit-content;
-}
-
-.atag1{
     color: black;
+  }
+  
+  /* ---------------------------------- */
+  /* The switch - the box around the slider */
+
+  .toggle{
+    margin: auto 20px auto 0;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    flex-wrap: wrap;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #5B677C;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  input[type="checkbox"]:checked+.slider {
+    background-color: #fd568a;
+  }
+  
+  input[type="checkbox"]:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  
+  /* ------------------------------------------- */
+  .atag {
+    color: unset;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
     text-decoration: none;
-}
-
-#headbtndiv1{
+  }
+  
+  #headbtndiv {
     height: fit-content;
     margin: auto 10px auto 0;
     border-radius: 5px;
-}
-
-#headbtn1{
+    margin-left: 20px;
+  }
+  
+  #headbtn {
     border: solid 1px;
     font-style: normal;
     font-weight: 600;
@@ -68,54 +143,126 @@
     line-height: 115%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #9F9D9D;
-    color: #9F9D9D;
+    border: 1px solid #9f9d9d;
+    color: #9f9d9d;
+  }
+
+/* ==========
+
+sidebar
+
+========== */
+
+.mobileView {
+    width: 100vw;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-width: 0px 0px;
 }
 
-#para4a1{
+.mobileLogo {
+    height: 40px;
+}
+
+.mobileIcons {}
+
+.menu {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+.sidebar {
+    width: 90vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background: #212121;
+    color: white;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 350ms;
+    z-index: 1000;
+}
+
+.cancel {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+    color: #4baf47;
+}
+
+.sideLogo {
+    margin-top: 20px;
+}
+
+.sideNavigator {
+    flex: 0.8;
+    margin-top: 30px;
+    width: 80%;
+}
+
+.sideNav {
+    margin-bottom: 30px;
+    padding-bottom: 13px;
+    font-size: 17px;
+    border-bottom: 1px solid rgba(75, 174, 70, 0.2);
     font-weight: 600;
-    font-style: normal; 
+}
+
+
+/* Main part */
+#para4a1 {
+    font-weight: 600;
+    font-style: normal;
     font-size: 32px;
     text-align: center;
-    color: #1F1D1D;
+    /* color: #1F1D1D; */
 }
 
-#previmage1a{
+#previmage1a {
     width: 190.9px;
     height: 184.13px;
     margin: 5% auto;
 }
 
-#range3{
+#range3 {
     height: fit-content;
     padding-bottom: 0%;
     width: fit-content;
     margin: 0px auto;
 }
 
-#sliderlabel1{
+#sliderlabel1 {
     display: inline-flex;
     padding-left: 18px;
     margin-left: 36%;
 }
 
-#slider3{
+#slider3 {
     flex: 0 0 50px;
     margin-right: 225.95px;
 }
 
-#slider4{
+#slider4 {
     flex: 0 0 40px;
 }
 
-#btns1{
+#btns1 {
     margin-top: 32.08px;
     width: auto;
     text-align: center;
     margin-bottom: 60px;
 }
 
-#savebtn{
+#savebtn {
     padding: 15px 20px;
     font-size: 20px;
     font-weight: 400;
@@ -127,7 +274,7 @@
     border-radius: 5.89863px;
 }
 
-#downbtn{
+#downbtn {
     padding: 15px 20px;
     font-size: 20px;
     font-weight: 400;
@@ -139,15 +286,15 @@
     color: white;
 }
 
-#para4b{
+#para4b {
     font-weight: 600;
-    font-style: normal; 
+    font-style: normal;
     font-size: 32px;
     text-align: center;
-    color: #1F1D1D;
+    /* color: #1F1D1D; */
 }
 
-#htmlDiv{
+#htmlDiv {
     background-color: #F0F5FD;
     width: 80%;
     margin: 2% auto 5%;
@@ -155,9 +302,9 @@
     border-radius: 5px;
 }
 
-textarea{
+textarea {
     width: 90%;
-    background-color: #C2D5F8;;
+    background-color: #C2D5F8;
     height: 210px;
     border-radius: 5px;
     margin: 0 5%;
@@ -168,11 +315,11 @@ textarea{
     border: none;
 }
 
-textarea:focus{
+textarea:focus {
     background-color: white;
 }
 
-#copybtn{
+#copybtn {
     padding: 1% 2%;
     border-radius: 5px;
     font-size: 20px;
@@ -182,116 +329,116 @@ textarea:focus{
     background-color: #FD568A;
     border: none;
     margin: 3% 0% 3% 5%;
+    cursor: pointer;
 }
 
 
 /* Footer */
 
-footer{
-    background-color: #3D4452;
-    width: 100%;
-}
+/* Footer */
 
-#footer{
+footer {
+    background-color: #3d4452;
+    width: 100%;
+  }
+  
+  #footer {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
     color: black;
     border: solid 2px;
-    padding-left: 212px;
-    padding-right: 205px;
     color: white;
-}
-
-#footer1{
-    flex: 0 0 auto;
-    padding-top: 113px;
-    padding-bottom: 86px;
-    margin-right: 10%;   
-}
-
-.foothead{
+    padding: 5% 10% 3%;
+  }
+  
+  .foothead {
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     margin-bottom: 29px;
     text-decoration: none;
-}
-
-.footpara{
+  }
+  
+  .footpara {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     text-decoration: none;
-}
-
-#footer2{
-    flex: 0 0 auto;
-    padding-top: 113px;
-    padding-bottom: 86px;
+  }
+  
+  #footer4 {
     margin-right: 10%;
-}
-
-#footer3{
-    flex: 0 0 auto;
-    padding-top: 113px;
-    padding-bottom: 86px;
-    margin-right: 10%;
-}
-
-#footer4{
-    flex: 0 0 auto;
-    padding-top: 113px;
-    padding-bottom: 86px;
-    margin-right: 10%;
-}
-
-a{
+  }
+  
+  a {
     color: white;
     text-decoration: none;
-}
-
-.fa-download{
+  }
+  
+  .fa-download {
     margin-left: 10px;
-}
-
-.fa-save{
+  }
+  
+  .fa-save {
     margin-left: 10px;
-}
-
-.fa-twitter{
+  }
+  
+  .fa-twitter {
     margin-right: 16.3px;
-}
-
-.fa-facebook{
+  }
+  
+  .fa-facebook {
     margin-right: 16.3px;
-}
-
-.fa-github{
+  }
+  
+  .fa-github {
     margin-right: 16.3px;
-}
-
-.fa-slack{
+  }
+  
+  .fa-slack {
     margin-right: 16.3px;
-}
+  }
+  
 
 
 /* Input Types */
 
-input[type=range]{
+input[type=range] {
     /* -webkit-appearance: none; */
     width: 300.4px;
     height: 8.71px;
     background-color: rgb(222, 229, 233);
     border-radius: 34.8293px;
-    
+
 }
 
-input[type=range]::-webkit-progress-value{
+input[type=range]::-webkit-progress-value {
     background-color: pink;
     color: red;
 }
 
-innput[type=range]::-webkit-slider-thumb{
+innput[type=range]::-webkit-slider-thumb {
     background-color: gray;
 }
+
+
+
+
+@media only screen and (max-width: 768px) {
+    #headerdiv {
+      display: none;
+      background: red;
+    }
+  
+    .sidebar {
+      display: flex;
+    }
+  
+    .mobileView {
+      display: flex;
+    }
+  }
+
