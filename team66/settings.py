@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
 from pathlib import Path
 from decouple import config
 
@@ -17,10 +16,8 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config(
@@ -28,22 +25,10 @@ SECRET_KEY = config(
     default='django-insecure--_n1hrs+a_umv-y5qiy==1_%z)v5965@0r=k%m-z14(q(n)8n)'
     )
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=True, cast=bool)
 
-
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = config(
-#     "SECRET_KEY ", 
-#     default='django-insecure-b5e=4+-nkh(ox^otzk)71+zbb!x6ovp8fca&opjdx&e*8t%p(_'
-#     )
-
-# # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = config("DEBUG", default=True, cast=bool)
-
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 INSTALLED_APPS = [
@@ -62,19 +47,8 @@ INSTALLED_APPS = [
     
     # my apps
     'apps.account',
+    'apps.faviconer',
 ]
-
-# REST_FRAMEWORK = {
-#     # Use Django's standard `django.contrib.auth` permissions,
-#     # or allow read-only access for unauthenticated users.
-#     'DEFAULT_PERMISSION_CLASSES': [
-#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-#     ],
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         'rest_framework.authentication.SessionAuthentication',
-#         'rest_framework_simplejwt.authentication.JWTAuthentication',
-#     ],
-# }
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -84,7 +58,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
 }
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -155,18 +128,18 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+MEDIA_ROOT = BASE_DIR/'frontend/templates/account/images/'
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR/'frontend/static/'
     ]
-
+ 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-AUTH_USER_MODEL='account.UserProfile'
+AUTH_USER_MODEL = 'account.UserProfile'
+APPEND_SLASH = False

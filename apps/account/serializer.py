@@ -1,6 +1,7 @@
 from rest_framework import serializers
-from django.contrib.auth import get_user_model
 from rest_framework.validators import UniqueValidator
+from django.contrib.auth.password_validation import validate_password
+from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate
 from . import models
 
@@ -45,14 +46,10 @@ class RegisterSerializer(serializers.ModelSerializer):
             'password2',
             'email', 
             'name'
-            # 'first_name', 
-            # 'last_name'
             ]
         extra_kwargs = {
             'email': {'required': True},
             'name': {'required': True}
-            # 'first_name': {'required': True},
-            # 'last_name': {'required': True}
         }
         
       # validate that both passwords match
@@ -67,8 +64,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         user = User.objects.create(
             email = validated_data['email'],
             username = validated_data['username'],
-            first_name = validated_data['first_name'],
-            last_name = validated_data['last_name'],
+            name = validated_data['name']
         )
         
         # pass the validated password
@@ -80,14 +76,14 @@ class RegisterSerializer(serializers.ModelSerializer):
 class LoginSerializer(serializers.Serializer):
     """ This is the serializer for logging in a user """
     username = serializers.CharField(
-        label="Username",
-        write_only=True
+        label = "Username",
+        write_only = True
     )
     password = serializers.CharField(
-        label="Password",
+        label = "Password",
         # This will be used when the DRF browsable API is enabled
-        style={'input_type': 'password'},
-        write_only=True
+        style = {'input_type': 'password'},
+        write_only = True
     )
 
     def validate(self, data):
@@ -98,27 +94,55 @@ class LoginSerializer(serializers.Serializer):
         if username and password:
             # Authenticate the user
             user = authenticate(
-                request=self.context.get('request'),
-                username=username, 
-                password=password
+                request = self.context.get('request'),
+                username = username, 
+                password = password
                 )
             if not user:
                 # Raise a ValidationError if user is not authenticated,
                 msg = 'Access denied: invalid username or password.'
-                raise serializers.ValidationError(msg, code='authorization')
+                raise serializers.ValidationError(msg, code = 'authorization')
         else:
             msg = 'Enter username or password'
-            raise serializers.ValidationError(msg, code='authorization')
+            raise serializers.ValidationError(msg, code = 'authorization')
         data['user'] = user
         return data
 
+class UpdatedLoginSerializer(serializers.Serializer):
+    """ This is the serializer for logging in a user """
+    username = serializers.CharField(
+        label = "Username",
+        write_only = True
+    )
+    password = serializers.CharField(
+        label = "Password",
+        style = {'input_type': 'password'},
+        write_only = True
+    )
+
+    def validate(self, data):
+        # Take username and password from request
+        username = data.get('username')
+        password = data.get('password')
+        user = models.UserProfile.objects.filter(username = username).first()
+        if user.check_password(password):
+            return data
+
 class UserProfileSerializer(serializers.ModelSerializer):
     """serializer for user profile objects"""
-    
     class Meta:
-        model=models.UserProfile
-        fields=('id','email', 'password', 'name', 'title', 'username', 'is_active')
-        extra_kwargs={
+        model = models.UserProfile
+        fields = [
+            'id',
+            'email', 
+            'password', 
+            'name', 
+            'title',
+            'profile_pic',
+            'username', 
+            'is_active'
+            ]
+        extra_kwargs = {
             'password': {'write_only': True},
             'email': {'required': True},
             'name': {'required': True}
@@ -135,3 +159,87 @@ class UserProfileSerializer(serializers.ModelSerializer):
             user.save()
             
             return user
+        
+class ResetPasswordSerializer(serializers.ModelSerializer):
+    """ serializer for changing password"""
+    password = serializers.CharField(
+        write_only = True, 
+        required = True, 
+        validators = [validate_password])
+    password2 = serializers.CharField(write_only=True, required=True)
+    old_password = serializers.CharField(write_only=True, required=True)
+    
+    class Meta:
+        model = User
+        fields = [
+            'old_password', 
+            'password', 
+            'password2'
+        ]
+
+    def validate(self, data):
+        if data['password'] != data['password2']:
+            raise serializers.ValidationError({"password": "Password fields didn't match."})
+
+        return data
+
+    def validate_old_password(self, value):
+        user = self.context['request'].user
+        if not user.check_password(value):
+            raise serializers.ValidationError({"old_password": "Old password is not correct"})
+        return value
+
+    def update(self, instance, validated_data):
+        user = self.context['request'].user
+
+        if user.pk != instance.pk:
+            raise serializers.ValidationError({"authorize": "You dont have permission for this user."})
+
+        instance.set_password(validated_data['password'])
+        instance.save()
+
+        return instance
+
+class UpdateUserSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = [
+            'username', 
+            'name', 
+            'title', 
+            'email',
+            'profile_pic'
+        ]
+        extra_kwargs = {
+            'name': {'required': True},
+        }
+
+    def validate_email(self, value):
+        user = self.context['request'].user
+        if User.objects.exclude(pk = user.pk).filter(email=value).exists():
+            raise serializers.ValidationError({"email": "This email is already in use."})
+        return value
+
+    def validate_username(self, value):
+        user = self.context['request'].user
+        if User.objects.exclude(pk = user.pk).filter(username=value).exists():
+            raise serializers.ValidationError({"username": "This username is already in use."})
+        return value
+
+    def update(self, instance, validated_data):
+        user = self.context['request'].user
+
+        if user.pk != instance.pk:
+            raise serializers.ValidationError({"authorize": "You dont have permission for this user."})
+
+        instance.name = validated_data['name']
+        instance.email = validated_data['email']
+        instance.title = validated_data['title']
+        instance.username = validated_data['username']
+        instance.profile_pic = validated_data['profile_pic']
+
+        instance.save()
+
+        return instance

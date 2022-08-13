@@ -19,6 +19,7 @@ class IsCreatorOrAdmin(permissions.BasePermission):
         # if user making the request is the object owner
         if request.user == obj:
             return True
+        
 
 class UpdateOwnProfile(permissions.BasePermission):
     """Users are able to edit their own profile"""
