@@ -54,6 +54,11 @@
 
 /* ---------------------------------- */
 /* The switch - the box around the slider */
+
+.toggle{
+  margin: auto 20px auto 0;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -290,15 +295,15 @@ input[type="checkbox"]:checked+.slider:before {
 }
 
 .textfont {
-    border: solid 1px rgb(161, 159, 159);
-    padding: 11.665px 0px 11.665px 24.4px;
-    border: 8%;
-    width: 50%;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    border-radius: 3px 0px 0px 3px;
-    color: black; 
+  border: solid 1px rgb(161, 159, 159);
+  padding: 11.665px 0px 11.665px 24.4px;
+  border: 8%;
+  width: 50%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 3px 0px 0px 3px;
+  color: black;
 }
 
 
@@ -315,7 +320,7 @@ input[type=text] {
   flex-wrap: wrap;
   width: 90%;
   margin-bottom: 10.08px;
-  border: solid 1px;
+  /* border: solid 1px; */
 }
 
 #fonttype1 {
@@ -336,11 +341,11 @@ input[type=text] {
 }
 
 #left {
- width: 50%;
+  flex: 0 0 50%;
 }
 
 #right {
-  /* width: 30%; */
+  flex: 0 0 50%;
 }
 
 #fontsize {
@@ -464,6 +469,7 @@ input[type=number] {
   height: 155.47px;
   margin-bottom: 5%;
   margin-left: 22%;
+  border-radius: 100%;
 }
 
 .sliderlabel {
@@ -557,7 +563,7 @@ input[type=number] {
   font-weight: 500;
   margin-right: 45px;
   color: white;
-  background-color: rgba(75, 73, 73, 0.281);
+  background-color: #9F9D9D;
 }
 
 #btn5a {
@@ -719,602 +725,8 @@ innput[type="range"]::-webkit-slider-thumb {
   background-color: gray;
 }
 
-/* Media Querry for generate favicon page.*/
 
-@media only screen and (max-width: 768px) {}
-
-@media only screen and (max-width: 425px) {
-  * {
-    box-sizing: border-box;
-    max-width: 100%;
-    min-height: auto;
-  }
-
-  body {
-    max-width: 100%;
-  }
-
-  /* Header */
-  #headerdiv {
-    width: 100%;
-    border: solid 1px;
-    box-shadow: none;
-    padding: 0;
-    margin-bottom: 32.86px;
-  }
-
-  #headerdiv1 {
-    display: flex;
-    width: 100%;
-    background-color: white;
-    padding-left: 24px;
-    border: solid 1px;
-  }
-
-  #genzimg {
-    flex: 0 0 100px;
-    height: 38.14px;
-    margin: auto 20px auto 0;
-    border: solid 1px;
-  }
-
-  .navlink {
-    margin: auto 0 auto 0;
-    flex: 0 0 auto;
-  }
-
-  #navlink {
-    margin: auto 0 auto 0;
-    flex: 0 0 auto;
-  }
-
-  .atag {
-    color: black;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 22px;
-    text-decoration: none;
-  }
-
-  #headbtndiv {
-    height: fit-content;
-    margin: auto 0 auto 0;
-    border-radius: 5px;
-  }
-
-  #headbtn {
-    border: solid 1px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 115%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #9f9d9d;
-    color: #9f9d9d;
-  }
-
-  /* The body part */
-
-  .mainDivs {
-    border-bottom: solid rgb(211, 210, 210) 2px;
-    width: 100%;
-  }
-
-  .headings {
-    margin-left: 30px;
-    margin-bottom: 6.85px;
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  #secondDiv1 {
-    display: flex;
-    flex-direction: column;
-    background: #5b677c;
-    width: fit-content;
-    height: fit-content;
-    margin-bottom: 35.15px;
-  }
-
-  #thirdDiv {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2% auto 0;
-    padding: 2% 1% 0% 5%;
-    border-radius: 2px 2px 0 0;
-  }
-
-  #para1 {
-    font-size: 11.9795px;
-    width: 178.49px;
-    line-height: 120%;
-  }
-
-  #fourthDiv {
-    flex: 0 0 auto;
-    border: none;
-    padding-top: 4%;
-  }
-
-  #label1 {
-    cursor: pointer;
-    background-color: white;
-    padding: 5.47px 7.67px;
-    border-radius: 2px;
-    font-size: 5.98973px;
-    margin-right: 14.35px;
-    margin-left: 58.55px;
-  }
-
-  #choosefile {
-    display: none;
-  }
-
-  #btn1 {
-    padding: 7.075px 12.075px;
-    font-size: 5.39076px;
-    border: none;
-    border-radius: 2px;
-    color: white;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-
-  #fifthDiv {
-    display: flex;
-    flex-direction: row;
-    background-color: #5b677c;
-    margin: 0 auto 0;
-    padding: 2% 1% 2% 5%;
-    border-radius: 0 0 2px 2px;
-  }
-
-  #para2 {
-    font-size: 11.9795px;
-    width: 147.4px;
-    font-weight: 400;
-    line-height: 120%;
-    color: white;
-  }
-
-  #sixthDiv {
-    flex: 0 0 auto;
-    border: none;
-    padding-top: 2%;
-    margin-left: 125px;
-  }
-
-  #btn2 {
-    padding: 6.77px 8.27px;
-    font-size: 7.18767px;
-    font-weight: 400;
-    color: white;
-    background-color: #fd568a;
-    border: none;
-    border-radius: 3px;
-    margin: 3% 0 0 0px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-
-  #secondDiv2 {
-    background-color: white;
-    box-shadow: none;
-    position: relative;
-    width: 1186px;
-    margin: 2% auto 5%;
-    border-radius: 2px;
-  }
-
-  #textDiv {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    padding: 10px 0 25px;
-  }
-
-  #textDiv1 {
-    flex: 0 0 351px;
-    margin-top: 26.97px;
-    margin-left: 4%;
-  }
-
-  #para2a {
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
-  }
-
-  #textDiv1a {
-    display: inline-flex;
-    margin-bottom: 10.08px;
-    width: 177px;
-  }
-
-  .textfont {
-    border: solid 1px rgb(161, 159, 159);
-    padding: 11.665px 0px 11.665px 24.4px;
-    border: 8%;
-    flex: 0 0 240.5px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13.5px;
-    border-radius: 4.06359px 0px 0px 4.06359px;
-  }
-
-  #fonttype {
-    display: inline-flex;
-    justify-content: space-between;
-    width: 194px;
-    margin-bottom: 10.08px;
-  }
-
-  #fonttype1 {
-    border: solid 1px rgb(161, 159, 159);
-    border: 8%;
-    flex: 0 0 235px;
-    border-radius: 3px 0px 0px 3px;
-    margin-right: 10.62px;
-  }
-
-  .fonttype1a {
-    font-size: 13.5px;
-    font-weight: 400;
-  }
-
-  #fonttype2 {
-    flex: 0 0 111.19px;
-    display: inline-flex;
-  }
-
-  #fontsize {
-    display: inline-flex;
-    width: 153px;
-    margin-bottom: 10.08px;
-  }
-
-  #fontsize1 {
-    border: solid 1px rgb(161, 159, 159);
-    padding: 11.665px 0px 11.665px 24.4px;
-    border: 8%;
-    flex: 0 0 278px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13.5px;
-    line-height: 120%;
-    border-radius: 4.06359px 0px 0px 4.06359px;
-  }
-
-  #fontstate {
-    display: inline-flex;
-    flex: 0 0 151.08px;
-  }
-
-  #fontstate1 {
-    border-radius: none;
-    flex: 0 0 75.54px;
-    border: solid 1px rgb(161, 159, 159);
-    font-size: 13.5px;
-    font-style: normal;
-    font-weight: 400;
-    text-align: center;
-    padding: 11.665px auto 11.665px;
-  }
-
-  #fontstate2 {
-    border-radius: none;
-    flex: 0 0 75.54px;
-    border: solid 1px rgb(161, 159, 159);
-    font-size: 13.5px;
-    font-style: normal;
-    font-weight: 400;
-    text-align: center;
-    padding: 11.665px auto 11.665px;
-  }
-
-  #favback {
-    display: inline-flex;
-    margin-bottom: 10.08px;
-    width: 178px;
-  }
-
-  #favback1 {
-    border: solid 1px rgb(161, 159, 159);
-    padding: 11.665px 0px 11.665px 24.4px;
-    flex: 0 0 240.5px;
-    font-weight: 400;
-    font-size: 13.5px;
-  }
-
-  #textcolor {
-    display: inline-flex;
-    width: 178px;
-  }
-
-  #textcolor1 {
-    border: solid 1px rgb(161, 159, 159);
-    padding: 11.665px 0px 11.665px 24.4px;
-    flex: 0 0 240.5px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13.5px;
-    border-radius: 4.06359px 0px 0px 4.06359px;
-  }
-
-  #textDiv2 {
-    width: 400px;
-    padding-bottom: 0px;
-  }
-
-  .preview {
-    font-weight: 600;
-    margin-left: 39%;
-    font-size: 10.6px;
-    margin-bottom: 37.16px;
-    width: 43px;
-    margin-top: 60.3px;
-  }
-
-  .prevImage {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 1%;
-    margin-left: 33%;
-  }
-
-  #range1 {
-    margin-bottom: 0%;
-  }
-
-  input[type="range"] {
-    width: 183px;
-    margin-left: 25%;
-    margin-bottom: 0;
-  }
-
-  .sliderlabel {
-    display: inline-flex;
-    margin-top: 0;
-    margin-left: 20%;
-    padding-left: 0;
-    margin-bottom: 5%;
-  }
-
-  .slider1 {
-    flex: 0 0 50px;
-    margin-right: 111px;
-    font-size: 9px;
-  }
-
-  .slider2 {
-    flex: 0 0 40px;
-    font-size: 9px;
-  }
-
-  #btn34 {
-    margin-bottom: 0;
-    margin-left: 10%;
-    line-height: 0px;
-  }
-
-  .btn3 {
-    padding: 6.77px 7.2px;
-    gap: 7.37px;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 120%;
-    font-style: normal;
-    color: #9f9d9d;
-    margin-right: 1%;
-    margin-left: 16%;
-    border: 1px solid #1f1d1d;
-    border-radius: 5.89863px;
-  }
-
-  .btn4 {
-    padding: 6.77px 10px;
-    font-size: 10px;
-    text-align: center;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 120%;
-    border: none;
-    background-color: #fd568a;
-    border-radius: 5.89863px;
-    color: white;
-  }
-
-  #htmlbtn1 {
-    margin-left: 29%;
-    padding: 6.77px 6px;
-    border-radius: 6px;
-    border: 1px solid #1f1d1d;
-    font-size: 10px;
-    font-weight: 400;
-    font-style: normal;
-    color: #9e9c9c;
-    cursor: pointer;
-    background: red;
-  }
-
-  #secondDiv3 {
-    background-color: white;
-    box-shadow: none;
-    position: relative;
-    width: 1186px;
-    margin: 2% auto 5%;
-    border-radius: 2px;
-  }
-
-  #heading2 {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 120%;
-    margin-top: 17px;
-    margin-bottom: 25px;
-  }
-
-  #iconDiv {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 30px;
-  }
-
-  #iconDiv1 {
-    flex: 0 0 auto;
-    padding-top: 0;
-    padding-left: 33px;
-    padding-bottom: 0px;
-  }
-
-  #para2b {
-    font-weight: 400;
-    font-size: 16px;
-  }
-
-  .btn5 {
-    padding: 6.91px 7.77px;
-    border: none;
-    border-radius: 4px;
-    font-size: 9px;
-    font-weight: 600;
-    margin-right: 10px;
-  }
-
-  #btn5a {
-    padding: 6.91px 7.77px;
-    border: none;
-    border-radius: 4px;
-    font-size: 9px;
-    font-weight: 600;
-    background-color: rgba(75, 73, 73, 0.281);
-  }
-
-  .icons {
-    width: 56.87px;
-    height: 56.87px;
-    margin-right: 5%;
-  }
-
-  #iconDiv2 {
-    flex: 0 0 auto;
-    padding: 0px 15%;
-  }
-
-  #heading3 {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 120%;
-  }
-
-  #htmlbtn2 {
-    margin-left: 29%;
-    padding: 6.77px 6px;
-    border-radius: 6px;
-    border: 1px solid #1f1d1d;
-    font-size: 10px;
-    font-weight: 400;
-    font-style: normal;
-    color: #9e9c9c;
-  }
-
-  /* Footer */
-
-  footer {
-    /* background-color: #3D4452; */
-    width: 100%;
-    background-color: white;
-  }
-
-  #footer {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    border: solid 2px;
-    padding-left: 2px;
-    padding-right: 205px;
-    /* color: white; */
-    border: solid 1px;
-    color: #000000;
-  }
-
-  #footer1 {
-    flex: 1 1 110px;
-    padding-top: 5px;
-    padding-bottom: 2px;
-    margin-right: 0%;
-    border: solid 1px;
-  }
-
-  .foothead {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 19px;
-    margin-bottom: 29px;
-    text-decoration: none;
-  }
-
-  .footpara {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 15px;
-    text-decoration: none;
-  }
-
-  #footer2 {
-    flex: 1 1 125px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    margin-right: 10%;
-    border: solid 1px;
-  }
-
-  #footer3 {
-    flex: 1 1 auto;
-    padding-top: 2px;
-    padding-bottom: 86px;
-    margin-right: 10%;
-    border: solid 1px;
-  }
-
-  #footer4 {
-    flex: 1 1 auto;
-    padding-top: 2px;
-    padding-bottom: 86px;
-    margin-right: 10%;
-    border: solid 1px;
-  }
-
-  a {
-    color: black;
-    text-decoration: none;
-  }
-
-  .fa-download {
-    margin-left: 10px;
-  }
-
-  .fa-save {
-    margin-left: 10px;
-  }
-
-  .fa-twitter {
-    margin-right: 16.3px;
-  }
-
-  .fa-facebook {
-    margin-right: 16.3px;
-  }
-
-  .fa-github {
-    margin-right: 16.3px;
-  }
-
-  .fa-slack {
-    margin-right: 16.3px;
-  }
-}
+/* Html modals for favicon texts and Images.*/
 
 #htmlDiv {
   background-color: #f0f5fd;
@@ -1381,7 +793,6 @@ textarea:focus {
 }
 
 
-
 .toggle {
   display: flex;
   align-items: center;
@@ -1401,13 +812,23 @@ sidebar
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
+  border-width: 0px 0px;
 }
 
 .mobileLogo {
   height: 40px;
 }
 
-.mobileIcons {}
+.mobileIcons {
+
+}
+
+.menu {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
 
 .sidebar {
   width: 90vw;
@@ -1451,18 +872,6 @@ sidebar
   font-weight: 600;
 }
 
-/* @media screen and (min-width: 768px) {
-  .sidebar {
-    display: flex;
-  }
-  .mobileView {
-    display: flex;
-  }
-  .headerdiv {
-    display: none;
-    background: red;
-  }
-} */
 
 @media only screen and (max-width: 768px) {
   #headerdiv {
@@ -1478,5 +887,3 @@ sidebar
     display: flex;
   }
 }
-
-@media screen and (min-width: 480px) {}
