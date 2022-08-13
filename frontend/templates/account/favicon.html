@@ -1,138 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favicon Page</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fontawesome.com/v5/icons/save?s=regular.css">
-    <link rel="stylesheet" href="favicon.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favicon Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="favicon.css" />
 </head>
-<body>
-    <header class="mainDivs">
-        <nav>Favicons</nav>
-        <nav>Contact Us</nav>
-        <nav>Tutorial</nav>
-        <button>Sign Up</button>
-        <button>Sign In</button>
-    </header>
-    <div class="mainDivs">
-        <h1 class="headings">Generate Favicons From IMAGES.</h1>
-        <div class="secondDivs">
-            <div id="thirdDiv">
-                <p id="para1">Already have an image for your Favicon?</p>
-                <div id="fourthDiv">
-                    <label for="choosefile" id="label1">Choose file
-                        <input type="file" id="choosefile" name="" accept="image/*">
-                    </label>
-                    <button id="btn1">Upload</button><br><br>
-                </div>
-            </div>
-            <div id="fifthDiv">
-                <p id="para2">Want to generate from random image?</p>
-                <div id="sixthDiv"><button id="btn2">Click here</button></div>
-            </div>
-        </div>
+
+<body id="body">
+  <header id="headerdiv">
+    <div id="headerdiv1">
+      <div id="genzimg"><img src="Genzwhite.jpg" /></div>
+      <div class="navlink"><a href="" class="atag">Favicons</a></div>
+      <div class="navlink">
+        <a href="contact.html" class="atag">Contact Us</a>
+      </div>
+      <div id="navlink">
+        <a href="documentation.html" class="atag">Tutorial</a>
+      </div>
+      <div class="toggle">
+        <label class="switch">
+          <input type="checkbox" id="toggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div id="headbtndiv">
+        <button href="SignIn.html" id="headbtn">Log out</button>
+      </div>
     </div>
-    <div class="mainDivs">
-        <h1 class="headings">Generate Favicons from TEXTS.</h1>
-        <div class="secondDivs">
-            <div id="textDiv">
-                <div id="textDiv1">
-                    <p>Text Options</p>
-                    <div id="textDiv1a">
-                        <div class="textfont"><label for="text">Text</label></div>
-                        <input type="text" id="text1" name="" value="" placeholder="text">
-                    </div><br><br>
-                    <label>Robato</label>
-                    <input type="button" id="" value="<">
-                    <input type="button" value=">"><br><br>
-                    <label for="font" class="textfont">Font size</label>
-                    <input type="number" id="font"><br><br>
-                    <label>Background</label>
-                    <input type="number">
-                </div>
-                <div id="textDiv2">
-                    <p class="preview">Preview</p>
-                    <img src="quest.jpg" alt="" class="prevImage">
-                    <div id="btn">
-                        <button class="btn3">Save<i class="far fa-save"></i></button>
-                        <button class="btn4">Download  <i class="fa fa-download"></i></button>
-                    </div>
-                </div>
-            </div>    
-        </div>
+  </header>
+  <!-- Drop down at mobile size screen -->
+  <div class="mobileView">
+    <img class="mobileLogo" src="Genzwhite.jpg" />
+    <div class="mobileIcons" onclick="show()">
+      <span id="menus">
+        <div class="menu"></div>
+        <div class="menu"></div>
+        <div class="menu"></div>
+      </span>
     </div>
-    <div class="mainDivs">
-        <h1 class="headings">Generate Favicons from ICONS</h1>
-        <div class="secondDivs">
-            <div>
-                <p>Choose from various categories of icons to generate your favicon</p>
-                <button class="btn5">People</button>
-                <button class="btn5">Nature</button>
-                <button class="btn5">Places</button>
-                <button class="btn5">Objects</button>
-                <button class="btn5">Flags</button>
-            </div>
-            <div id="iconDiv">
-                <div id="iconDiv1">
-                    <img src="circle.jpg" alt="" class="icons">
-                    <img src="circle.jpg" alt="" class="icons">
-                    <img src="circle.jpg" alt="" class="icons">
-                    <img src="circle.jpg" alt="" class="icons"><br><br><br>
-                    <img src="circle.jpg" alt="" class="icons">
-                    <img src="circle.jpg" alt="" class="icons">
-                    <img src="circle.jpg" alt="" class="icons">
-                    <img src="circle.jpg" alt="" class="icons"><br><br><br>
-                    <img src="circle.jpg" alt="" class="icons">
-                    <img src="circle.jpg" alt="" class="icons">
-                    <img src="circle.jpg" alt="" class="icons">
-                    <img src="circle.jpg" alt="" class="icons">
-                </div>
-                <div id="iconDiv2">
-                    <p class="preview">Preview</p>
-                    <img src="quest.jpg" alt="" class="prevImage">
-                    <div id="btn34">
-                        <button class="btn3">Save<i class="far fa-save"></i></button>
-                        <button class="btn4">Download  <i class="fa fa-download"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
+  </div>
+
+  <!-- Side bar at mobile screen size -->
+  <div id="sidebar" class="sidebar">
+    <div onclick="vanish()" class="cancel">
+      <buttton><i class="fa-regular fa-xmark"></i>cancel</buttton>
     </div>
-    <footer>
-        <div id="footer">
-            <div>
-                <h5>About Us</h5>
-                <p>What we do</p>
-                <p>How we roll</p>
-                <p>What we are</p>
-            </div>
-            <div>
-                <h5>Support</h5>
-                <p>Documentation</p>
-                <p>Features</p>
-                <p>Feedback</p>
-            </div>
-            <div>
-                <h5>Resources</h5>
-                <p>What are favicons</p>
-                <p>How to generate favicons</p>
-                <p>Icons gallery</p>
-                <p>Favicons format</p>
-            </div>
-            <div>
-                <h5>Contact Us</h5>
-                <a href="">twitter</a><br><br>
-                <a href="">facebook</a><br><br>
-                <a href="">github</a><br><br>
-                <a href="">slack</a><br><br>
-            </div>
+    <img src="Genzwhite.jpg" alt="" class="sideLogo" />
+    <div class="sideNavigator">
+      <div class="sideNav">Home</div>
+      <div class="sideNav">About</div>
+      <div class="sideNav">Services</div>
+    </div>
+  </div>
+
+  <div class="mainDivs">
+    <h1 class="headings">
+      Generate <span style="color: #fd568a">Favicons</span> From
+      <span style="color: #fd568a">IMAGES.</span>
+    </h1>
+    <div id="secondDiv1">
+      <div id="thirdDiv">
+        <p id="para1">Already have an image for your Favicon?</p>
+        <div id="fourthDiv">
+          <label for="choosefile" id="label1">Choose file
+            <input type="file" id="choosefile" name="" accept="image/*" />
+          </label>
+          <button href="favicon(modal).html" id="btn1">Upload</button><br /><br />
         </div>
-    </footer>
+      </div>
+      <div id="fifthDiv">
+        <p id="para2">Want to generate from random image?</p>
+        <div id="sixthDiv">
+          <button href="favicon(modal).html" id="btn2">Click here</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mainDivs">
+    <h1 class="headings" id="heading2">
+      Generate <span style="color: #fd568a">Favicons</span> from
+      <span style="color: #fd568a">TEXT.</span>
+    </h1>
+    <div id="secondDiv2">
+      <div id="textDiv">
+        <div id="textDiv1">
+          <p id="para2a">Text Options</p>
+          <div id="textDiv1a">
+            <div class="textfont"><label for="text">Text</label></div>
+            <input type="text" id="text1" name="" value="" size="100" placeholder="text" />
+          </div>
+          <br /><br />
+          <div id="fonttype">
+            <div id="fonttype1">
+              <select style="width:100%;" id="left" class="fonttype1a" name=""></select>
+            </div>
+            <div id="fonttype2">
+              <input type="button" id="left" value="<" />
+              <input type="button" id="right" value=">" />
+            </div>
+          </div>
+          <br /><br />
+          <div id="fontsize">
+            <div id="fontsize1"><label for="font">Font size</label></div>
+            <input type="number" id="font" size="10" />
+            <div id="fontstate">
+              <button id="fontstate1"><b>B</b></button>
+              <button id="fontstate2">
+                <b><i>I</i></b>
+              </button>
+            </div>
+          </div>
+          <br /><br />
+          <div id="favback">
+            <div id="favback1"><label for="back">Background</label></div>
+            <input type="text" id="back" size="35" />
+          </div>
+          <br /><br />
+          <div id="textcolor">
+            <div id="textcolor1"><label for="back">Text Color</label></div>
+            <input type="text" id="back" size="35" />
+          </div>
+        </div>
+        <div id="textDiv2">
+          <p class="preview">Preview</p>
+          <img src="quest.jpg" alt="" class="prevImage" />
+          <div id="range1">
+            <input type="range" id="range" />
+          </div>
+          <div class="sliderlabel">
+            <div class="slider1"><label for="slider">square</label></div>
+            <div class="slider2"><label for="slider">circle</label></div>
+          </div>
+          <br />
+          <div id="btn34">
+            <button href="" class="btn3">
+              Save<i class="fa fa-save"></i>
+            </button>
+            <button href="" class="btn4">
+              Download <i class="fa fa-download"></i>
+            </button>
+          </div>
+          <br />
+          <button href="" id="htmlbtn1">Click here for HTML code</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mainDivs">
+    <h1 class="headings" id="heading2">
+      Generate <span style="color: #fd568a">Favicons</span> from
+      <span style="color: #fd568a">ICONS.</span>
+    </h1>
+    <div id="secondDiv3">
+      <div id="iconDiv">
+        <div id="iconDiv1">
+          <p id="para2b">
+            Choose from various categories of icons to generate your favicon
+          </p>
+          <br />
+          <button href="" class="btn5">Emojis</button>
+          <button href="" class="btn5">Nature</button>
+          <button href="" class="btn5">Places</button>
+          <button href="" class="btn5">Objects</button>
+          <button href="" id="btn5a">Flags</button><br /><br /><br />
+          <img src="circle.jpg" alt="" class="icons" />
+          <img src="circle.jpg" alt="" class="icons" />
+          <img src="circle.jpg" alt="" class="icons" />
+          <img src="circle.jpg" alt="" class="icons" /><br /><br /><br />
+          <img src="circle.jpg" alt="" class="icons" />
+          <img src="circle.jpg" alt="" class="icons" />
+          <img src="circle.jpg" alt="" class="icons" />
+          <img src="circle.jpg" alt="" class="icons" /><br /><br /><br />
+          <img src="circle.jpg" alt="" class="icons" />
+          <img src="circle.jpg" alt="" class="icons" />
+          <img src="circle.jpg" alt="" class="icons" />
+          <img src="circle.jpg" alt="" class="icons" />
+        </div>
+        <div id="iconDiv2">
+          <p class="preview">Preview</p>
+          <img src="quest.jpg" alt="" class="prevImage" /><br />
+          <div id="range2"><input type="range" min="0" max="9" value="0"></div>
+          <div class="sliderlabel">
+            <div class="slider1"><label for="slider">square</label></div>
+            <div class="slider2"><label for="slider">circle</label></div>
+          </div>
+          <div id="btn34">
+            <button href="" class="btn3">
+              Save<i class="fa fa-save"></i>
+            </button>
+            <button href="" class="btn4">
+              Download <i class="fa fa-download"></i>
+            </button>
+          </div>
+          <br />
+          <button id="htmlbtn2">Click here for HTML code</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div id="footer">
+      <div id="footer1">
+        <h5 href="" class="foothead">About Us</h5>
+        <p href="" class="footpara">What we do</p>
+        <p href="" class="footpara">How we roll</p>
+        <p href="" class="footpara">What we are</p>
+      </div>
+      <div id="footer2">
+        <h5 href="" class="foothead">Support</h5>
+        <p href="" class="footpara">Documentation</p>
+        <p href="" class="footpara">Features</p>
+        <p href="" class="footpara">Feedback</p>
+      </div>
+      <div id="footer3">
+        <h5 href="" class="foothead">Resources</h5>
+        <p href="" class="footpara">What are favicons</p>
+        <p href="" class="footpara">How to generate favicons</p>
+        <p href="" class="footpara">Icons gallery</p>
+        <p href="" class="footpara">Favicons format</p>
+      </div>
+      <div id="footer4">
+        <h5 href="" class="foothead">Contact Us</h5>
+        <a href="" class="footpara"><i class="fa fa-twitter"></i>twitter</a><br /><br />
+        <a href="" class="footpara"><i class="fa fa-facebook"></i>facebook</a><br /><br />
+        <a href="" class="footpara"><i class="fa fa-github"></i>github</a><br /><br />
+        <a href="" class="footpara"><i class="fa fa-slack"></i>slack</a><br /><br />
+      </div>
+    </div>
+  </footer>
+
+  <!-- HTML Modal -->
+  <div class="modal" id="modal">
+    <div id="htmlDiv">
+      <div id="htmlDiv1">
+        <textarea name="" readonly id="htmlCode">html code...</textarea>
+      </div>
+      <div class="buttons">
+        <button href="" id="copybtn" onclick="copyToClipboard()">
+          Copy link
+        </button>
+        <button href="" id="copybtn2">Done</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="./favicon.js"></script>
 </body>
+
 </html>

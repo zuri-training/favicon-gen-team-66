@@ -39,8 +39,17 @@
 [endpoint updates #44](https://github.com/zuri-training/favicon-gen-team-66/pull/44)
 
 Used Django Rest Framework to create the following APIs for:
-- Updated the User registration
-- Login user
-- Logout user
-- User profile
-- User list for admin
+- Updated the User registration to allow users to register
+- Created Login user API to allow users to login to the site
+- Created Logout user API to allow users logout of the site
+- Created User profile API to allow users to view their profile
+
+[Updated Endpoints](https://github.com/zuri-training/favicon-gen-team-66/pull/117)
+- Update login API 
+- Linked favicon to user to allow users to generate favicoms
+
+[View and Endpoint changes](https://github.com/zuri-training/favicon-gen-team-66/pull/122)
+- Modifications to the views.py using django rest framework generics
+
+[updated user profile](https://github.com/zuri-training/favicon-gen-team-66/pull/125)
+- updated user profile to allow users upload their profile image
