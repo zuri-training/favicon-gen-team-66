@@ -1,4 +1,4 @@
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -53,7 +53,7 @@ class ProfileView(RetrieveUpdateDestroyAPIView):
     """ view for the updating or deleting a user profile """
     queryset = models.UserProfile.objects.all()
     serializer_class = UpdateUserSerializer
-    permission_classes = [UpdateOwnProfile]
+    permission_classes = [IsAuthenticated]
 
     def get_object(self):
         return self.request.user

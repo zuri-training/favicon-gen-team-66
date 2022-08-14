@@ -19,5 +19,6 @@ from django.urls import path,include
 urlpatterns = [
     path('admin', admin.site.urls),
     path('api-auth', include('rest_framework.urls')),
-    path('favicon/',include('apps.account.urls')),
+    path('user/',include('apps.account.urls')),
+    path('favicon/',include('apps.faviconer.urls')),
 ]

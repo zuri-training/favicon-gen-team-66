@@ -14,7 +14,12 @@ def generate_favicon_id(source_url, crop_points, size):
 
 
 class FaviconGenerator:
-    def __init__(self, image: Image.Image, crop_points: dict = None, icon_size: int = 16):
+    def __init__(
+        self, 
+        image: Image.Image, 
+        crop_points: dict = None, 
+        icon_size: int = 16
+        ):
         self.image = image
         self.crop_points = crop_points
         self.icon_size = icon_size
