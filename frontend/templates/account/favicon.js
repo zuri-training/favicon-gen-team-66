@@ -15,10 +15,12 @@ getToggle.addEventListener("click", () => {
 //   document.documentElement.classList.toggle("dark-theme");
 // });
 
+// Text html code Modal
 modalBttn.addEventListener("click", () => {
   modal.style.display = "flex";
 });
 
+// Done button for text and icon modals
 copybtn2.addEventListener("click", () => {
   modal.style.display = "none";
 });
@@ -28,6 +30,13 @@ const copyToClipboard = () => {
   navigator.clipboard.writeText(getData);
   alert("copied successfully");
 };
+
+// const copyToClipboards = () => {
+//   const getCode = document.getElementById("htmlCodeImage").innerHTML;
+//   navigator.clipboard.writeText(getCode);
+//   alert("copied successfully");
+// };
+
 
 // html button 2
 
