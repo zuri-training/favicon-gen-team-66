@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    font-family: 'poppins', sans-serif;
+    padding: 15px;
+    display: flex;
+}
+
+.Wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #F0F5FD;
+    width: 45%;
+    height: auto;
+    margin: auto;
+    margin-top: 90px;
+    padding-bottom: 40px;
+    border-radius: 25px;
+}
+h1{
+    font-size: 35px;
+    margin-top: 25px;
+    font-weight: 900;
+}
+h3 {
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+h3:before,
+h3:after {
+    background-color: grey;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 186px;
+}
+h3:before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+  
+  h3:after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
+
+.Social-media{
+    text-decoration: none;
+    text-transform: capitalize;
+    background-color: #F0F5FD;
+    border: 1px solid;
+    border-radius: 3px;
+    color: black;
+    padding: 15px 19px ;
+    width: 60%;
+    text-align: center;
+    font-weight: 600;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+input{
+    padding: 12px 220px 12px 5px;
+    width: 100%;
+    border: 1px solid #BFBDBD;
+    border-radius: 3px;
+    background-color: #ffffff;
+}
+.btn{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+.create{
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+.sign{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #FD568A;
+
+}
+.no_account{
+   margin-bottom: 40px; 
+}
+.cpassword{
+    font-weight: 600;
+}
+.fa-brands{
+    font-size: 18px;
+    color: black;
+    margin-right: 7px;
+}
+.Fpassword{
+    text-decoration: none;
+    text-align: end;
+    color: black;
+}
+.Fpassword:hover{
+    text-decoration: underline;
+}
+button{
+    color: #ffffff;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 18px;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    background-color: #FD568A;
+}
+.error{
+    display: none;
+    text-align: left;
+    margin: 0.5rem;
+    font-size: 0.9rem;
+    color: red
+}
+.aside{
+    width: 50%;
+    position: relative;
+}
+img{
+    width: 100%;
+    height: 120vh;
+    margin-top: 50px;
+}
+.logo-name{
+    display: flex;
+    flex-direction: row;
+    
+    
+    position: absolute;
+    top: -5%;
+    left: -90%;
+    height: 20px ;
+    letter-spacing: 4px; 
+}
+.logo-title{
+    /* width: 45px;
+    height: 45px; */
+    margin-top: 55px;
+    margin-left: 5px;
+    font-weight: 300;
+}
+.logo{
+    width: 45px;
+    height: 45px;
+}
+.zee{
+    color: #FD568A;
+}
+
+@media screen and (max-width:768px){
+    body{
+        padding: 0;
+    }
+    h1{
+        margin:0;
+    }
+    .hr-lines{
+        font-size: 15px
+    }
+ .Wrapper{
+     display: block ;
+     width: 100%;
+     text-align: start;
+     /* margin: 5px 0 0 0; */
+     margin: 0;
+     margin-top: 45px;
+     
+     
+     padding: 15px;
+     height: auto;
+     border-radius: 0;
+     border-top-left-radius: 25px;
+     border-top-right-radius: 25px;
+
+ } 
+ .aside{
+    display: none;
+    width: 0;
+ }
+ .Social-media{
+     width: 100%;
+     display: flex;
+     text-align: center;
+     padding-left: 45px;
+     /* margin: 5px 11px; */
+     font-weight: 600;
+     font-size: 17px;     
+ }
+ .facebook{
+     margin-top: -15px;
+ }
+ .create{
+     font-size: 14px ;
+ }
+ .no_account{
+     font-size: 14px;
+ }
+ .Fpassword{
+     text-decoration: underline;
+     font-size: 14px;
+ }
+ input{
+    /* padding: 12px 220px 12px 5px; */
+    width: 100%;
+    color: lightgrey;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 15px 5px ;
+    font-size: 15px;
+    font-weight: 600;
+    
+}  
+label{
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+}
