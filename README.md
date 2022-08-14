@@ -136,12 +136,14 @@ Next create a `.env` file by using the sample.env. Retrieve your secret key from
 
 | <b><u>View</u></b> | <b><u>URL</u></b> | 
 | :---         | :---         |
-| `Register User`| http://127.0.0.1:8000/register |
-| `Login User`| http://127.0.0.1:8000/login |
-| `Logout User` | http://127.0.0.1:8000/logout |
-| `User profile` | http://127.0.0.1:8000/profile |
-| `User List` | http://127.0.0.1:8000/users
- |
+| `Register User`| http://127.0.0.1:8000/user/register |
+| `Login User`| http://127.0.0.1:8000/user/login |
+| `Logout User` | http://127.0.0.1:8000/user/logout |
+| `User profile` | http://127.0.0.1:8000/user/profile |
+| `Change password` | http://127.0.0.1:8000/user/change_pass |
+| `upload image` | http://127.0.0.1:8000/favicon/add |
+| `Change password` | http://127.0.0.1:8000/favicon/list/<str:username> |
+
 > ## Status
 This project is a work in progress and is currently under development.
 
