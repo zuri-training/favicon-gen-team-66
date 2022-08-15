@@ -17,20 +17,31 @@
             <br>
             <a href="#" class="Social-media"><span><i class="fa-brands fa-google"></i></i></span> Sign In with Google</a>
             <br> 
-            <a href="#" class="Social-media"><span><i class="fa-brands fa-facebook"></i></span>Sign In with Facebook</a> <br>
+            <a href="#" class="Social-media facebook" ><span><i class="fa-brands fa-facebook"></i></span>Sign In with Facebook</a> <br>
             <h3 class="hr-lines">OR</h3>
             
-            <form action="#">
+            <form action="#" id="form">
                 <label for="Email">Email</label>
-                <input type="email" placeholder="marlinDoe@gmail.com">
+                <input type="email" placeholder="marlinDoe@gmail.com" id="email" name="email">
+                <p class="error" id="email-error">Email can't be blank</p>
                 <br>
                 <label for="password">Password</label>
-                <input type="password" placeholder="Enter Password">
+                <input type="password" placeholder="Enter Password" id="password" name="pass">
+                <p class="error" id="password-error">Password can't be blank</p>
                 <a href="Fpassword.html" class="Fpassword">Forgot Password?</a>
                 <br><br>
-                <button>Sign In</button>
+                <button type="submit" class="login-btn">Sign In</button>
             </form>
-            <p class="no_account">Don't have an account? <a href="Signup.html" class="sign">Sign Up</a></p>
+            <p class="no_account">Don't have an account? <a href="Register.html" class="sign">Sign Up</a></p>
     </div>
+    <div class="aside">
+        <img src="./images/side-image.JPG" alt="Image">
+        <div class="logo-name">
+            <img class="logo" src="./images/Logo.svg" alt="" >
+            <h2 class="logo-title">Gen<span class="zee">Z</span>icons</h2>
+        </div>
+            
+        </div>
+    <script src="index.js"></script>
 </body>
 </html>

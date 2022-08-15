@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="./assests/css/signup.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,8 +16,7 @@
       src="https://kit.fontawesome.com/89039e6814.js"
       crossorigin="anonymous"
     ></script>
-    <script src="signup.js"></script>
-    <title>Signup</title>
+    <title>Sign up</title>
   </head>
   <body>
     <div class="form-container">
@@ -37,17 +36,18 @@
         <h4>OR</h4>
         <form action="" method="post">
           <label for="full-name">Full Name</label>
-          <input type="text" name="full-name" placeholder="Marilyn Doe"id="full-name">
+          <input type="text" name="full-name" placeholder="Marilyn Doe"id="full-name" required>
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" placeholder="MarilynDoe@gmail.com">
+          <input type="email" name="email" id="email" placeholder="MarilynDoe@gmail.com" required>
           <label for="pwd">Password</label>
-          <input type="password" name="password" id="pwd" placeholder="Enter password">
+          <input type="password" name="password" id="pwd" placeholder="Enter password" required>
           <label for="confirm-pwd">Confirm Password</label>
-          <input type="password" name="confirm-pwd" id="confirm-pwd" placeholder="Enter password again">
+          <input type="password" name="confirm-pwd" id="confirm-pwd" placeholder="Enter password again" required>
           <button class="signup" id="SubmitBTN" type="submit">Sign Up</button>
         </form>
         <small>Already have an account? <a href="#">Sign In</a></small>
       <div>
     <div>  
+    <script src="./assests/js/signup.js"></script>
   </body>
 </html>

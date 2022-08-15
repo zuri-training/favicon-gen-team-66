@@ -9,12 +9,13 @@
    box-sizing: border-box;
    max-width: 100%;
  }
- h1{
-  font-weight: 600;
-  font-size: 40px;
-  line-height:120%;
-  text-align: center;
-  padding: 24px;  
+
+ h1 {
+   font-weight: 600;
+   font-size: 40px;
+   line-height: 120%;
+   text-align: center;
+   padding: 24px;
  }
 
  body {
@@ -28,15 +29,15 @@
 
  .form-container {
 
-width: 40%;
-/* border-radius: 20px; */
-position: relative;
-background: #F0F5FD;
-border-radius: 32px;
-padding: 24pt 56pt;
+   width: 40%;
+   /* border-radius: 20px; */
+   position: relative;
+   background: #F0F5FD;
+   border-radius: 32px;
+   padding: 24pt 56pt;
 
-  }
-  
+ }
+
  .form-content {
    width: 100%;
    /* background-color: aqua; */
@@ -69,7 +70,8 @@ padding: 24pt 56pt;
  }
 
  .form-content input {
-   padding: 12px 0px 12px 12px;;
+   padding: 12px 0px 12px 12px;
+   ;
    font-size: 12px;
    margin: 10px 0;
    outline: none;
@@ -80,7 +82,7 @@ padding: 24pt 56pt;
 
  button,
  #customBtn {
-  background: #FD568A;
+   background: #FD568A;
    color: #fff;
    /* width: 300px; */
    border-radius: 4px;
@@ -111,7 +113,7 @@ padding: 24pt 56pt;
    cursor: pointer;
  }
 
- i{
+ i {
    margin-right: 10px;
    width: 9.34px;
    height: 18px;
