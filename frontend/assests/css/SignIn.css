@@ -5,8 +5,10 @@
 }
 
 body{
-    background-color: grey;
+    background-color: white;
     font-family: 'poppins', sans-serif;
+    padding: 15px;
+    display: flex;
 }
 
 .Wrapper{
@@ -14,11 +16,11 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: white;
-    width: 50%;
+    background-color: #F0F5FD;
+    width: 45%;
     height: auto;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 90px;
     padding-top: 30px;
     padding-bottom: 40px;
     border-radius: 25px;
@@ -57,7 +59,7 @@ h3:before {
 .Social-media{
     text-decoration: none;
     text-transform: capitalize;
-    background-color: lightgrey;
+    background-color: #F0F5FD;
     border: 1px solid;
     border-radius: 3px;
     color: black;
@@ -77,8 +79,9 @@ label{
 input{
     padding: 12px 220px 12px 5px;
     width: 100%;
-    border: 1px solid grey;
+    border: 1px solid #BFBDBD;
     border-radius: 3px;
+    background-color: #ffffff;
 }
 .btn{
     text-align: center;
@@ -92,9 +95,9 @@ input{
     margin-bottom: 25px;
 }
 .sign{
-    color: black;
     text-decoration: underline;
     cursor: pointer;
+    color: #FD568A;
 
 }
 .no_account{
@@ -113,37 +116,101 @@ input{
     text-align: end;
     color: black;
 }
+.Fpassword:hover{
+    text-decoration: underline;
+}
 button{
+    color: #ffffff;
     border: none;
     font-size: 18px;
-    padding: 12px;
+    border-radius: 5px;
+    padding: 18px;
     font-weight: 600;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     margin-bottom: 10px;
     cursor: pointer;
+    transition: background 0.2s ease;
+    background-color: #FD568A;
 }
+.error{
+    display: none;
+    text-align: left;
+    margin: 0.5rem;
+    font-size: 0.9rem;
+    color: red
+}
+.aside{
+    width: 50%;
+    position: relative;
+}
+img{
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+}
+.logo-name{
+    display: flex;
+    flex-direction: row;
+    
+    
+    position: absolute;
+    top: -5%;
+    left: -90%;
+    height: 20px ;
+    letter-spacing: 4px; 
+}
+.logo-title{
+    margin-top: 55px;
+    margin-left: 5px;
+    font-weight: 300;
+}
+.logo{
+    width: 45px;
+    height: 45px;
+}
+.zee{
+    color: #FD568A;
+}
+
 @media screen and (max-width:768px){
+    body{
+        padding: 0;
+    }
+    h1{
+        margin:0;
+    }
+    .hr-lines{
+        font-size: 15px
+    }
  .Wrapper{
      display: block ;
      width: 100%;
-     padding: 0;
      text-align: start;
-     padding: 35px;
+     margin: 0;
+     margin-top: 45px;
+     
+     
+     padding: 15px;
      height: auto;
      border-radius: 0;
      border-top-left-radius: 25px;
      border-top-right-radius: 25px;
 
  } 
- h1{
-
+ .aside{
+    display: none;
+    width: 0;
  }
  .Social-media{
      width: 100%;
      display: flex;
-     margin: 5px;
+     text-align: center;
+     padding-left: 45px;
      font-weight: 600;
-     font-size: 17px;
+     font-size: 17px;     
+ }
+ .facebook{
+     margin-top: -15px;
  }
  .create{
      font-size: 14px ;
@@ -156,9 +223,8 @@ button{
      font-size: 14px;
  }
  input{
-    /* padding: 12px 220px 12px 5px; */
     width: 100%;
-    color: lightgrey;
+    color: black;
     border: 1px solid black;
     border-radius: 3px;
     padding: 15px 5px ;
