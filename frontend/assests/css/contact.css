@@ -1,29 +1,180 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins&display=swap');
 
+.dark-theme {
+    background: #282c35;
+    color: white;
+}
+
 * {
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    max-width: 100%;
+    min-height: auto;
+    transition: background 350ms;
     padding: 0;
     margin: 0;
 }
 
 body {
-    background: #E7EEFC;
     font-size: 0.8750em;
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     line-height: 120%;
-    color: #1F1D1D;
+    margin-top: 0%;
+    /* background: #E7EEFC; */
+}
+
+/* The head part. */
+
+#headerdiv {
+    border-bottom: solid rgb(211, 210, 210) 2px;
+    padding-bottom: 0px;
+    width: 100%;
+    margin-bottom: 0;
+    /* height: fit-content; */
+    box-shadow: 0px 0px 10px 0px rgb(12, 10, 10);
+}
+
+#headerdiv1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: white;
+    padding-left: 97px;
+}
+
+#genzimg {
+    flex: 0 0 236px;
+    height: 72px;
+    margin-right: 235.58px;
+    justify-items: auto;
+}
+
+.navlink {
+    margin: auto 72px auto 0;
+    flex: 0 0 auto;
+    height: fit-content;
+    color: black;
+}
+
+#navlink {
+    margin: auto 80px auto 0;
+    flex: 0 0 auto;
+    height: fit-content;
+    color: black;
+}
+
+/* ---------------------------------- */
+/* The switch - the box around the slider */
+
+.toggle {
+    margin: auto 20px auto 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #5B677C;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input[type="checkbox"]:checked+.slider {
+    background-color: #fd568a;
+}
+
+input[type="checkbox"]:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* ------------------------------------------- */
+.atag {
+    color: unset;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    text-decoration: none;
+}
+
+#headbtndiv {
+    height: fit-content;
+    margin: auto 10px auto 0;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+#headbtn {
+    border: solid 1px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 115%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #9f9d9d;
+    color: #9f9d9d;
+}
+
+
+/* The main part */
+#containerBefore {
+    background: #E7EEFC;
 }
 
 .container {
     width: 90%;
-    margin-left:auto;
+    margin-left: auto;
     margin-right: auto;
     padding: 2em;
-} 
+}
 
-.content{
-        display: flex;
+.content {
+    display: flex;
 }
 
 .intro {
@@ -46,8 +197,9 @@ h1 {
 }
 
 p {
-        margin-bottom: 2em;
+    margin-bottom: 2em;
 }
+
 .get {
     font-size: 1.5em;
     font-weight: 400;
@@ -60,6 +212,7 @@ p {
     font-weight: bold;
     line-height: 1.5em;
 }
+
 .formgroup {
     margin-bottom: 1em;
 }
@@ -74,7 +227,7 @@ textarea {
     height: 200px;
 }
 
-button {
+#submit {
 
     padding: 0.6em;
     border-radius: 10px;
@@ -84,6 +237,7 @@ button {
     margin-right: 0;
     float: right;
     margin-top: 2em;
+    margin-bottom: 10%;
 
 }
 
@@ -92,6 +246,7 @@ button {
     font-weight: 400;
     line-height: 1.5em;
 }
+
 .last {
     font-size: 1.5em;
     margin-bottom: 1.5em;
@@ -104,7 +259,7 @@ button {
     font-size: 1.5em;
 }
 
-.faqs a:hover{
+.faqs a:hover {
     color: #db1151
 }
 
@@ -136,7 +291,7 @@ textarea {
     border-radius: 1em;
 }
 
-button {
+#submit {
     padding: 1.5em 3em;
     border-radius: 1em;
     background-color: #FD568A;
@@ -147,8 +302,9 @@ button {
     margin-top: 2em;
     font-size: initial;
 }
-button:hover{
-    background-color:#ffffff;
+
+#submit:hover {
+    background-color: #ffffff;
     border: 2px solid grey;
     color: #FD568A;
 }
@@ -156,57 +312,125 @@ button:hover{
 .gonedown {
     display: none;
 }
-.checkbox{
+
+.checkbox {
     margin-right: 1em;
 }
 
 input:invalid.required {
-  border: 2px solid #FD568A;
+    border: 2px solid #FD568A;
 }
 
 input:invalid:required:focus {
-  border: 2px solid #FD568A;
+    border: 2px solid #FD568A;
 }
 
 input:valid {
-  border: 2px solid grey;
+    border: 2px solid grey;
 }
 
-@media screen and (max-width: 600px){
+/* Footer */
+
+footer {
+    background-color: #3d4452;
+    width: 100%;
+  }
+  
+  #footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    color: black;
+    border: solid 2px;
+    color: white;
+    padding: 5% 10% 3%;
+  }
+  
+  .foothead {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 29px;
+    text-decoration: none;
+  }
+  
+  .footpara {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+  }
+  
+  #footer4 {
+    margin-right: 10%;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .fa-download {
+    margin-left: 10px;
+  }
+  
+  .fa-save {
+    margin-left: 10px;
+  }
+  
+  .fa-twitter {
+    margin-right: 16.3px;
+  }
+  
+  .fa-facebook {
+    margin-right: 16.3px;
+  }
+  
+  .fa-github {
+    margin-right: 16.3px;
+  }
+  
+  .fa-slack {
+    margin-right: 16.3px;
+  }
+
+@media screen and (max-width: 600px) {
     .container {
         width: 100%;
-        margin-left:auto;
+        margin-left: auto;
         margin-right: auto;
         display: flex;
         padding: 2em;
-        flex-direction:column;
-    } 
+        flex-direction: column;
+    }
 
-    .content{
+    .content {
         display: block;
-}
+    }
 
     .intro {
         width: 100%;
         padding: 1em;
     }
-    
+
     .details {
         width: 100%;
         padding: 1em;
     }
-    
-h1 {
-    text-align: center;
-    margin: 0 0 1em 0;
-}
+
+    h1 {
+        text-align: center;
+        margin: 0 0 1em 0;
+    }
 
     p {
         line-height: 20px;
         margin-top: 1em;
         text-align: center;
     }
-    
+
     .last {
         font-weight: bold;
         margin-top: 1em;
@@ -220,56 +444,58 @@ h1 {
     }
 
     h2 {
-    margin-bottom: 2.5em;
-    text-align: center;
-}
+        margin-bottom: 2.5em;
+        text-align: center;
+    }
 
-.checkbox{
-    margin-right: 1em;
-}
+    .checkbox {
+        margin-right: 1em;
+    }
 
-button {
-    padding: 1.5em 3em;
-    border-radius: 0.5em;
-    background-color: #FD568A;
-    border: none;
-    color: #ffffff;
-    margin-top: 2em;
-    margin-bottom: 4em;
-    width: 100%;
-}
+    button {
+        padding: 1.5em 3em;
+        border-radius: 0.5em;
+        background-color: #FD568A;
+        border: none;
+        color: #ffffff;
+        margin-top: 2em;
+        margin-bottom: 4em;
+        width: 100%;
+    }
 
-button:hover{
-    background-color:#ffffff;
-    border: 2px solid grey;
-    color: #FD568A;
-}
+    button:hover {
+        background-color: #ffffff;
+        border: 2px solid grey;
+        color: #FD568A;
+    }
+
     .gone {
         display: none;
     }
 
-.gonedown {
-    display: flex;
-    background-color: #E7E5E5;
-    border-radius: 1em;
-    width: 100%;
-    padding: 0.8em;
-}
+    .gonedown {
+        display: flex;
+        background-color: #E7E5E5;
+        border-radius: 1em;
+        width: 100%;
+        padding: 0.8em;
+    }
 
-.contact {
-width: 38%;
-    font-size: 1.2em;
-    font-weight: 400;
-    text-align: left;
-    line-height: 2em;
-}
- .push{
-width: 62%;
-    font-size: 1.2em;
-    font-weight: 400;
-    text-align: left;
-    line-height: 2em;
-    word-wrap: break-word;
+    .contact {
+        width: 38%;
+        font-size: 1.2em;
+        font-weight: 400;
+        text-align: left;
+        line-height: 2em;
+    }
 
-  }
+    .push {
+        width: 62%;
+        font-size: 1.2em;
+        font-weight: 400;
+        text-align: left;
+        line-height: 2em;
+        word-wrap: break-word;
+
+    }
 }

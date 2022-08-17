@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assests/css/Signin.css">
+    <title>Signup Page</title>
+</head>
+
+<body>
+    <!-- Main box -->
+    <div id="main1">
+        <img src="./assests/images/logo.png" id="logo">
+        <div class="toggle">
+            <label class="switch">
+                <input type="checkbox" id="toggle" />
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <div id="main">
+        <div class="Wrapper">
+            <h1>Sign In</h1>
+            <p class="create">Enter your details to sign in</p>
+            <br>
+            <a href="#" class="Social-media"><span><i class="fa-brands fa-google"></i></i></span> Sign In with
+                Google</a>
+            <br>
+            <a href="#" class="Social-media facebook"><span><i class="fa-brands fa-facebook"></i></span>Sign In with
+                Facebook</a> <br>
+            <h3 class="hr-lines">OR</h3>
+
+            <form action="#" id="form">
+                <label for="Email"><b>Email</b></label>
+                <input type="email" placeholder="marlinDoe@gmail.com" id="email" name="email">
+                <p class="error" id="email-error">Email can't be blank</p>
+                <br>
+                <label for="password">Password</label>
+                <input type="password" placeholder="Enter Password" id="password" name="pass">
+                <p class="error" id="password-error">Password can't be blank</p>
+                <a href="Fpassword.html" class="Fpassword">Forgot Password?</a>
+                <br><br>
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+            <p class="no_account">Don't have an account? <a href="signup.html" class="sign">Sign Up</a></p>
+        </div>
+
+        <div id="img2">
+            <img src="./assests/images/signin.JPG">
+        </div>
+    </div>
+
+    <script src="./assests/js/index.js"></script>
+    <script src="./assests/js/favicon.js"></script>
+</body>
+
+</html>

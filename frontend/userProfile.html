@@ -11,47 +11,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assests/css/userProfile.css" />
-
-  <script type="text/javascript">
-    function setEditMode() {
-      var editElem = document.getElementById("edit");
-      editElem.focus().select();
-    }
-
-    function saveEdits() {
-      var editElem = document.getElementById("edit");
-      var userVersion = editElem.innerHTML;
-      localStorage.userEdits = userVersion;
-    }
-
-    function checkEdits() {
-      if (localStorage.userEdits != null)
-        document.getElementById("edit").innerHTML = localStorage.userEdits;
-    }
-
-  </script>
 </head>
 
 <body onload="checkEdits()">
-  <div class="wrapper  absolute">
-
-    <header class="top-nav-bar items-center flex justify-between sticky header">
-      <div><img class="m-top pointer" src="./assests/images/logo.png" alt="logo"></div>
-      <div class="flex justify-center">
-        <nav class="flex">
-          <ul class="flex nav-items">
-            <li><a href="#" target="_blank" rel="noopener noreferrer">Favicons</a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer">Contact us</a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer">Tutorial</a></li>
-          </ul>
-        </nav>
+    <header id="headerdiv">
+      <div id="headerdiv1">
+        <div id="genzimg"><img src="./assests/images/Genzwhite.jpg" /></div>
+        <div class="navlink"><a href="" class="atag">Favicons</a></div>
+        <div class="navlink">
+          <a href="contact.html" class="atag">Contact Us</a>
+        </div>
+        <div id="navlink">
+          <a href="documentation.html" class="atag">Tutorial</a>
+        </div>
+        <div class="toggle">
+          <label class="switch">
+            <input type="checkbox" id="toggle" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div id="headbtndiv">
+          <button href="SignIn.html" id="headbtn">Log out</button>
+        </div>
       </div>
-      <div>
-        <button class="btn-log-out pointer rounded">Log out</button>
-        <img id="myBtn" class="menu-icon" src="./assests/images/menu-icon.svg" alt="menu icon">
-      </div>
-
     </header>
+  <div class="wrapper  absolute">
 
     <div id="myModal" class="modal">
       <!-- Modal content -->
@@ -98,7 +82,7 @@
             <h1 class="p-bottom text-center">User Profile</h1>
             <div class="flex items-center gap-user user-about">
               <figure class="user-image-box">
-                <img class="user-image object-contain" src="images/Ellipse 2.png" alt="user-image" />
+                <img class="user-image object-contain" src="./assests/images/Ellipse2.png" alt="user-image" />
               </figure>
 
               <span>
@@ -286,6 +270,25 @@
     </footer>
 
   </div>
+
+  <script type="text/javascript">
+    function setEditMode() {
+      var editElem = document.getElementById("edit");
+      editElem.focus().select();
+    }
+
+    function saveEdits() {
+      var editElem = document.getElementById("edit");
+      var userVersion = editElem.innerHTML;
+      localStorage.userEdits = userVersion;
+    }
+
+    function checkEdits() {
+      if (localStorage.userEdits != null)
+        document.getElementById("edit").innerHTML = localStorage.userEdits;
+    }
+
+  </script>
 
   <script>
     function copyCode1() {

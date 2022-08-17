@@ -8,8 +8,144 @@ body{
     background-color: white;
     font-family: 'poppins', sans-serif;
     padding: 15px;
-    display: flex;
+    /* display: flex; */
 }
+
+/* The head part. */
+
+#headerdiv {
+    border-bottom: solid rgb(211, 210, 210) 2px;
+    padding-bottom: 15px;
+    width: 100%;
+    margin-bottom: 98px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  #headerdiv1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: white;
+    padding-left: 97px;
+  }
+  
+  #genzimg {
+    flex: 0 0 236px;
+    height: 72px;
+    margin-right: 235.58px;
+    justify-items: auto;
+  }
+  
+  .navlink {
+    margin: auto 72px auto 0;
+    flex: 0 0 auto;
+    height: fit-content;
+    color: black;
+  }
+  
+  #navlink {
+    margin: auto 80px auto 0;
+    flex: 0 0 auto;
+    height: fit-content;
+    color: black;
+  }
+  
+  /* ---------------------------------- */
+  /* The switch - the box around the slider */
+  
+  .toggle{
+    margin: auto 20px auto 0;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #5B677C;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  input[type="checkbox"]:checked+.slider {
+    background-color: #fd568a;
+  }
+  
+  input[type="checkbox"]:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  
+  /* ------------------------------------------- */
+  .atag {
+    color: unset;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    text-decoration: none;
+  }
+  
+  #headbtndiv {
+    height: fit-content;
+    margin: auto 10px auto 0;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+  
+  #headbtn {
+    border: solid 1px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 115%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #9f9d9d;
+    color: #9f9d9d;
+  }
+
 
 .Wrapper{
     display: flex;
@@ -21,7 +157,6 @@ body{
     height: auto;
     margin: auto;
     margin-top: 90px;
-    padding-top: 30px;
     padding-bottom: 40px;
     border-radius: 25px;
 }
@@ -145,7 +280,7 @@ button{
 }
 img{
     width: 100%;
-    height: auto;
+    height: 120vh;
     margin-top: 50px;
 }
 .logo-name{
@@ -160,6 +295,8 @@ img{
     letter-spacing: 4px; 
 }
 .logo-title{
+    /* width: 45px;
+    height: 45px; */
     margin-top: 55px;
     margin-left: 5px;
     font-weight: 300;
@@ -186,6 +323,7 @@ img{
      display: block ;
      width: 100%;
      text-align: start;
+     /* margin: 5px 0 0 0; */
      margin: 0;
      margin-top: 45px;
      
@@ -206,6 +344,7 @@ img{
      display: flex;
      text-align: center;
      padding-left: 45px;
+     /* margin: 5px 11px; */
      font-weight: 600;
      font-size: 17px;     
  }
@@ -223,8 +362,9 @@ img{
      font-size: 14px;
  }
  input{
+    /* padding: 12px 220px 12px 5px; */
     width: 100%;
-    color: black;
+    color: lightgrey;
     border: 1px solid black;
     border-radius: 3px;
     padding: 15px 5px ;

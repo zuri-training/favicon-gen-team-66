@@ -2,11 +2,108 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
+    transition: background 350ms;
 }
 
+.dark-theme {
+    background: #282c35;
+    color: white;
+  }
+
 body{
-    background-color: grey;
     font-family: 'poppins', sans-serif;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+#main{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 5%;
+    padding-top: 0;
+}
+
+#main1{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+/* The switch - the box around the slider */
+
+.toggle{
+    margin: auto 10% auto 0;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #5B677C;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  input[type="checkbox"]:checked+.slider {
+    background-color: #fd568a;
+  }
+  
+  input[type="checkbox"]:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+
+#logo{
+    width: 250px;
+    /* margin-top: 2%; */
+    width: fit-content;
+    height: fit-content;
 }
 
 .Wrapper{
@@ -14,14 +111,14 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: white;
-    width: 50%;
-    height: auto;
-    margin: auto;
-    margin-top: 50px;
+    background-color: #F0F5FD;
+    height: 822px;
+    width: 590px;
+    margin-top: 2%;
     padding-top: 30px;
     padding-bottom: 40px;
     border-radius: 25px;
+    color: black
 }
 h1{
     font-size: 35px;
@@ -57,7 +154,7 @@ h3:before {
 .Social-media{
     text-decoration: none;
     text-transform: capitalize;
-    background-color: lightgrey;
+    background-color: #F0F5FD;
     border: 1px solid;
     border-radius: 3px;
     color: black;
@@ -77,8 +174,9 @@ label{
 input{
     padding: 12px 220px 12px 5px;
     width: 100%;
-    border: 1px solid grey;
+    border: 1px solid #BFBDBD;
     border-radius: 3px;
+    background-color: #ffffff;
 }
 .btn{
     text-align: center;
@@ -92,9 +190,9 @@ input{
     margin-bottom: 25px;
 }
 .sign{
-    color: black;
     text-decoration: underline;
     cursor: pointer;
+    color: #FD568A;
 
 }
 .no_account{
@@ -113,37 +211,108 @@ input{
     text-align: end;
     color: black;
 }
+.Fpassword:hover{
+    text-decoration: underline;
+}
 button{
+    color: #ffffff;
     border: none;
     font-size: 18px;
-    padding: 12px;
+    border-radius: 5px;
+    padding: 18px;
     font-weight: 600;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     margin-bottom: 10px;
     cursor: pointer;
+    transition: background 0.2s ease;
+    background-color: #FD568A;
 }
+.error{
+    display: none;
+    text-align: left;
+    margin: 0.5rem;
+    font-size: 0.9rem;
+    color: red
+}
+.aside{
+    width: 50%;
+    position: relative;
+}
+img{
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+}
+.logo-name{
+    display: flex;
+    flex-direction: row;
+    
+    
+    position: absolute;
+    top: -5%;
+    left: -90%;
+    height: 20px ;
+    letter-spacing: 4px; 
+}
+.logo-title{
+    margin-top: 55px;
+    margin-left: 5px;
+    font-weight: 300;
+}
+.logo{
+    width: 45px;
+    height: 45px;
+}
+.zee{
+    color: #FD568A;
+}
+
+#img2{
+    width: 45%;
+    flex: 0 1 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 @media screen and (max-width:768px){
+    body{
+        padding: 0;
+    }
+    h1{
+        margin:0;
+    }
+    .hr-lines{
+        font-size: 15px
+    }
  .Wrapper{
      display: block ;
      width: 100%;
-     padding: 0;
      text-align: start;
-     padding: 35px;
+     margin: 0;
+     margin-top: 45px;
+     
+     
+     padding: 15px;
      height: auto;
      border-radius: 0;
      border-top-left-radius: 25px;
      border-top-right-radius: 25px;
 
  } 
- h1{
-
+ .aside{
+    display: none;
+    width: 0;
  }
  .Social-media{
      width: 100%;
      display: flex;
-     margin: 5px;
+     text-align: center;
+     padding-left: 45px;
      font-weight: 600;
-     font-size: 17px;
+     font-size: 17px;     
+ }
+ .facebook{
+     margin-top: -15px;
  }
  .create{
      font-size: 14px ;
@@ -156,9 +325,8 @@ button{
      font-size: 14px;
  }
  input{
-    /* padding: 12px 220px 12px 5px; */
     width: 100%;
-    color: lightgrey;
+    color: black;
     border: 1px solid black;
     border-radius: 3px;
     padding: 15px 5px ;
