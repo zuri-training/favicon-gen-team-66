@@ -4,16 +4,14 @@ const modalBttn2 = document.getElementById("htmlbtn2")
 const modalCancel = document.getElementById("copybtn2");
 const modal = document.getElementById("modal");
 const fontss = document.getElementById("left");
+const background = document.getElementById("containerBefore")
 
 const getToggle = document.getElementById("toggle");
 
 getToggle.addEventListener("click", () => {
   document.documentElement.classList.toggle("dark-theme");
+  background.style.background = 'unset';
 });
-
-// button.addEventListener("click", () => {
-//   document.documentElement.classList.toggle("dark-theme");
-// });
 
 // Text html code Modal
 modalBttn.addEventListener("click", () => {
