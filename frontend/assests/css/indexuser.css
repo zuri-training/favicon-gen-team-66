@@ -2,7 +2,6 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  overflow-x: hidden;
   font-family: "Poppins", sans-serif;
 }
 
@@ -18,7 +17,6 @@
   height: 3938px;
   display: flex;
   position: relative;
-  max-width: 1440px;
   box-sizing: border-box;
   align-items: flex-start;
   flex-shrink: 0;
@@ -29,7 +27,7 @@
 .home-active-state-rectangle770 {
   top: 72px;
   left: 0px;
-  width: 1440px;
+  width: 100%;
   height: 649px;
   margin: 0 0 0 0;
   position: absolute;
@@ -167,7 +165,7 @@
 .home-active-state-group233 {
   top: 915px;
   left: 120px;
-  width: 1199px;
+  width: 100%;
   height: 236px;
   display: flex;
   padding: 0;
@@ -250,7 +248,7 @@
 .home-active-state-group231 {
   top: 1251px;
   left: 120px;
-  width: 1143px;
+  width: 100%;
   height: 236px;
   display: flex;
   padding: 0;
@@ -333,7 +331,7 @@
 .home-active-state-group230 {
   top: 1587px;
   left: 120px;
-  width: 1199px;
+  width: 100%;
   height: 245px;
   display: flex;
   padding: 0;
@@ -415,7 +413,7 @@
 .home-active-state-rectangle778 {
   top: 1912px;
   left: 0px;
-  width: 1440px;
+  width: 100%;
   height: 1232px;
   margin: 0 0 0 0;
   position: absolute;
@@ -677,7 +675,7 @@
 .home-active-state-footer1 {
   top: 3514px;
   left: 0px;
-  width: 1440px;
+  width: 100%;
   height: 424px;
   display: flex;
   padding: 0;
@@ -1130,7 +1128,7 @@
 .home-active-state-header {
   top: 0px;
   left: 16px;
-  width: 1424px;
+  width: 100%;
   height: 72px;
   display: flex;
   padding: 0;
