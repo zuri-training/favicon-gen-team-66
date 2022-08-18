@@ -1,9 +1,8 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
-  overflow-x: hidden;
+  
 }
 
 .home-active-state-container {
@@ -18,7 +17,6 @@
   height: 3938px;
   display: flex;
   position: relative;
-  max-width: 1440px;
   box-sizing: border-box;
   align-items: flex-start;
   flex-shrink: 0;
@@ -167,7 +165,7 @@
 .home-active-state-group233 {
   top: 915px;
   left: 120px;
-  width: 1199px;
+  width: 100%;
   height: 236px;
   display: flex;
   padding: 0;
@@ -250,7 +248,7 @@
 .home-active-state-group231 {
   top: 1251px;
   left: 120px;
-  width: 1143px;
+  width: 100%;
   height: 236px;
   display: flex;
   padding: 0;
@@ -333,7 +331,7 @@
 .home-active-state-group230 {
   top: 1587px;
   left: 120px;
-  width: 1199px;
+  width: 100%;
   height: 245px;
   display: flex;
   padding: 0;
@@ -677,7 +675,7 @@
 .home-active-state-footer1 {
   top: 3514px;
   left: 0px;
-  width: 1440px;
+  width: 100%;
   height: 424px;
   display: flex;
   padding: 0;
@@ -768,6 +766,8 @@
   margin: 0 0 0 0;
   position: absolute;
   align-self: auto;
+  font-family: poppins;
+  font-weight: 600;
   text-align: center;
   line-height: 120.00000476837158%;
 }
@@ -875,6 +875,8 @@
   position: absolute;
   align-self: auto;
   text-align: center;
+  font-family: Poppins;
+  font-weight: 600;
   line-height: 120.00000476837158%;
 }
 .home-active-state-group189 {
@@ -951,6 +953,8 @@
   margin: 0 0 0 0;
   position: absolute;
   align-self: auto;
+  font-family: poppins;
+  font-weight: 600;
   text-align: center;
   line-height: 120.00000476837158%;
 }
@@ -972,6 +976,8 @@
   margin: 0 0 24 0;
   align-self: auto;
   text-align: center;
+  font-family: poppins;
+  font-weight: 600;
   line-height: 120.00000476837158%;
 }
 .home-active-state-frame236 {
@@ -1130,7 +1136,7 @@
 .home-active-state-header {
   top: 0px;
   left: 16px;
-  width: 1424px;
+  width: 100%;
   height: 72px;
   display: flex;
   padding: 0;
@@ -1363,4 +1369,9 @@ a {
 
 a {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 400px)  {
+    
+
 }
